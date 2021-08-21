@@ -1,6 +1,3 @@
-<?php
-?>
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -12,24 +9,29 @@
 
     <div class="contenedor-flexible-principal">
 		<div class="contenedor-flexible">
-			<form class="form" action="login.php" method="post">
+			<!-- <div class="contenedor-logo">
+				<img class="logo" src="imagenes/logo redondo.png">
+			</div> -->
+			
+			
+			<form class="form" action="controlacceso.php" method="post">
 
 				<div class="contenedor-label">
 					<label class="label-rol">Tipo de Usuario</label>
 				</div>
 				
-				<select class="selector">
-				  	<option value="value1">Trabajador</option>
-				  	<option value="value2" selected>Cliente</option>
-                    <option value="value3">Administrador</option>
+				<select class="selector" name="tipo">
+				  	<option value="T">Trabajador</option>
+				  	<option value="C" selected>Cliente</option>
+                    <option value="A">Administrador</option>
 				</select>
 				
 				<div class="form-section">
-					<input type="text" class="form-input" placeholder="RUT">
+					<input type="text" class="form-input" name="usuario" placeholder="RUT">
 				</div>
 
 				<div class="form-section">
-					<input type="password" class="form-input" placeholder="Contraseña"> 
+					<input type="password" class="form-input" name="contrasena" placeholder="Contraseña"> 
 				</div>
 
 				<button class="boton-inicio-sesion">Iniciar Sesión</button>
@@ -37,7 +39,7 @@
 			</form>
 
 			<div class="contenedor-flexible-inferior">
-				<button class="boton-registrate">Regístrate</button>
+				<a href="signup.php"><button class="boton-registrate">Regístrate</button></a>
 			</div>
 		</div>
 	</div>

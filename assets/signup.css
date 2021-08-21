@@ -1,0 +1,98 @@
+body { 
+	background-color: black;
+}
+
+.contenedor-flexible-principal{
+	display: flex;
+	height: 100vh;
+ 	background-color: black;
+ 	align-items: center;
+ 	justify-content: center;
+}
+
+.contenedor-flexible {
+	display: flex;
+	border-radius: 10px;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	width: 400px;
+	height: 600px;
+	flex-wrap: wrap;
+	background: #111;
+	border: 10px solid #222;
+}
+
+.form {
+	padding: 50px;
+	margin-top: 150px;
+}
+
+.contenedor-label {
+	margin-bottom: 5px;
+}
+
+.label-rol {
+	color: white;
+}
+
+.selector {
+	width: 140px;
+	border: 3px solid #0CABE6;
+	height: 30px;
+	margin-bottom: 15px;
+}
+
+.form-input {
+	color: white;
+	background-color: #444;
+	border: none;
+	border-bottom: 2px solid #0CABE6;
+	font-size: 14px;
+	border-radius: 8px;
+	text-align: center;
+	width: 300px;
+	height: 30px;
+	margin: 10px;
+}
+
+.form-input:focus {
+	/*background-color: #333;*/
+	background: linear-gradient(to top, transparent, #444);
+	outline: none;
+}
+
+.contenedor-flexible-inferior {
+	width: 100%;
+}
+
+
+.boton-registrate
+ {
+	border-radius: 5px;
+	background: #222;
+	border: 5px solid #666;
+	color: white;
+	margin-top: 30px;
+	padding: 10px;
+}
+
+
+.boton-inicio-sesion:hover {
+	border: 5px solid #0CABE6;
+	color: #0CABE6;
+}
+
+.boton-inicio-sesion
+ {
+	border-radius: 5px;
+	background: #222;
+	border: 5px solid #666;
+	color: white;
+	padding: 10px;
+}
+
+.boton-registrate:hover {
+	border: 5px solid #0CABE6;
+	color: #0CABE6;
+}
