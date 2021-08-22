@@ -11,11 +11,11 @@
 	$usuario = $_POST["usuario"];
 	$contrasena = $_POST["contrasena"];
     $tipo = $_POST["tipo"];
-    print_r($_POST);
+    //print_r($_POST);
 
 	/**
 	 * Guardamos la consulta correspondiente, definida en la especificación de módulos y la guardamos en una variable, en este caso, $sql */
-	$sql = "SELECT usu_rut, usu_clave, usu_tipo FROM usuario WHERE usu_rut = '$usuario' AND usu_clave = '$contrasena' AND usu_tipo = '$tipo'";
+	$sql = "SELECT * FROM usuario WHERE usu_rut = '$usuario'";
 
 	/**
 	 * Se ejecuta la consulta. Se accede a la base mediante conexion y se ingresa la consulta en sql
@@ -28,5 +28,35 @@
 		alert('El usuario ".$usuario." no se encuentra registrado en el sistema');
         //window.location = 'login.php';
 		</script>";
+	}
+	else
+	{
+		//preguntar si los datos del usuario coinciden con los de la base de datos
+		$sql = "SELECT usu_rut, usu_clave, usu_tipo FROM usuario WHERE usu_rut = '$usuario' AND usu_clave = '$contrasena' AND usu_tipo = '$tipo'";
+		$res = mysqli_query($conexion, $sql);
+
+		if (mysqli_num_rows($res) == 0) {
+			echo "<script text='text/javascript'>
+			alert('El usuario y el password no coinciden');
+			//window.location = 'login.php';
+			</script>";
+		}
+		//dar acceso a cada usuario según corresponda
+		else
+		{
+			$_SESSION['user'] = $usuario;
+			$_SESSION['typeofuser'] = $tipo;
+
+			if ($tipo == 'C') {
+				//header("Location: admin.php");
+			}
+			elseif ($tipo == 'T') {
+				# code...
+			}
+			else
+			{
+				header("Location: admin.php");
+			}
+		}
 	}
 ?>
