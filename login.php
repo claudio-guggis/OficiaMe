@@ -6,13 +6,14 @@
 	<link rel="stylesheet" type="text/css" href="assets/login.css">
 </head>
 <body>
-
     <div class="contenedor-flexible-principal">
+		
 		<div class="contenedor-flexible">
-			<!-- <div class="contenedor-logo">
+			<!-- <img class="logo" src="imagenes/logo redondo.png"> -->
+
+			<div class="contenedor-logo">
 				<img class="logo" src="imagenes/logo redondo.png">
-			</div> -->
-			
+			</div>
 			
 			<form class="form" action="controlacceso.php" method="post">
 

@@ -38,7 +38,7 @@
 		if (mysqli_num_rows($res) == 0) {
 			echo "<script text='text/javascript'>
 			alert('El usuario y el password no coinciden');
-			//window.location = 'login.php';
+			window.location = 'login.php';
 			</script>";
 		}
 		//dar acceso a cada usuario según corresponda

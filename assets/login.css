@@ -23,9 +23,25 @@ body {
 	border: 10px solid #222;
 }
 
+.contenedor-logo
+{
+	margin-top: 20px;
+}
+
+/* .contenedor-flexible .logo{
+	max-width: 50%;
+	max-height: 50%;
+} */
+
+.logo
+{
+	max-width: 50%;
+	max-height: 50%;
+}
+
 .form {
-	padding: 50px;
-	margin-top: 150px;
+	padding: 20px;
+	margin-top: 20px;
 }
 
 .contenedor-label {
