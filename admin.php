@@ -13,6 +13,14 @@
     <title>Administrador</title>
 </head>
 <body>
+    <header>
+        <ul>
+            <img src="imagenes/logo redondo.png" >
+            <li>hola</li>
+            <li>hola</li>
+            <li>hola</li>
+        </ul>
+    </header>
     <h1>Bienvenido administrador</h1>
     <p>Hola <?php echo $_SESSION['user']; ?></p>
     <br>
