@@ -39,6 +39,12 @@ body {
 	max-height: 50%;
 }
 
+.resp-acceso-p
+{
+	display: none;
+	color: red;
+}
+
 .form {
 	padding: 20px;
 	margin-top: 20px;

@@ -35,6 +35,10 @@
 					<input type="password" class="form-input" name="contrasena" placeholder="Contraseña"> 
 				</div>
 
+				<div class="resp-acceso">
+					<p class="resp-acceso-p" id="respuesta-acceso"></p>
+				</div>
+
 				<button class="boton-inicio-sesion">Iniciar Sesión</button>
 
 			</form>

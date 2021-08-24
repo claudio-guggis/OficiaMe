@@ -26,7 +26,7 @@
 	{
 		echo "<script text='text/javascript'>
 		alert('El usuario ".$usuario." no se encuentra registrado en el sistema');
-        //window.location = 'login.php';
+        window.location = 'login.php';
 		</script>";
 	}
 	else
@@ -44,19 +44,39 @@
 		//dar acceso a cada usuario según corresponda
 		else
 		{
-			$_SESSION['user'] = $usuario;
-			$_SESSION['typeofuser'] = $tipo;
+			$sqlestado = "SELECT usu_estado FROM usuario WHERE usu_rut = '$usuario'";
+			$consulta = mysqli_query($conexion, $sqlestado);
+			//$arrayDatos = array();
 
-			if ($tipo == 'C') {
-				//header("Location: admin.php");
-			}
-			elseif ($tipo == 'T') {
-				# code...
+			$row = mysqli_fetch_array($consulta);
+
+			$estado = $row[0];
+			//echo $estado;
+
+			$_SESSION['user'] = $usuario;
+			$_SESSION['type'] = $tipo;
+
+			if($estado == 'A')
+			{
+				if ($tipo == 'C') {
+					header("Location: cliente/cliente.php");
+				}
+				elseif ($tipo == 'T') {
+					header("Location: trabajador/misservicios.php");
+				}
+				else
+				{
+					header("Location: administrador/admin.php");
+				}
 			}
 			else
 			{
-				header("Location: admin.php");
+				echo "<script text='text/javascript'>
+				alert('Su cuenta aun no ha sido activada!');
+				window.location = 'login.php';
+				</script>";
 			}
+			
 		}
 	}
 ?>
