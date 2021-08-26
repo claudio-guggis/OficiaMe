@@ -71,6 +71,7 @@
                 document.getElementById('respuesta-acceso').innerHTML = \"Ingrese usuario y contraseña\";
                 document.getElementById('respuesta-acceso').style.display=\"block\";
 			</script>";
+        echo 'hola';
 
     }
 	
