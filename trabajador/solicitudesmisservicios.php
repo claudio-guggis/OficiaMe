@@ -11,7 +11,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Publicar Servicio</title>
+    <title>Solicitudes de mis servicios</title>
 </head>
 <body>
     <header>
@@ -20,7 +20,7 @@
                 <img src="../imagenes/logo redondo.png" >
                 <li><a href="misservicios.php">Mis Servicios</a></li>
                 <li><a href="publicarservicio.php">Publicar Oferta</a></li>
-                <li><a href="">Solicitudes</a></li>
+                <li><a href="solicitudesmisservicios.php">Solicitudes</a></li>
             </ul>
         </div>
 

@@ -20,7 +20,7 @@
                 <img src="../imagenes/logo redondo.png" >
                 <li><a href="misservicios.php">Mis Servicios</a></li>
                 <li><a href="publicarservicio.php">Publicar Oferta</a></li>
-                <li><a href="">Solicitudes</a></li>
+                <li><a href="solicitudesmisservicios.php">Solicitudes</a></li>
             </ul>
         </div>
 

@@ -7,7 +7,7 @@
      */
     $rut = $_SESSION['user'];
 
-    $sql = "SELECT ser_id, ser_titulo, usu_nombre, usu_paterno, reg_nombre, com_nombre, ser_valor, ser_descripcion, ser_fechapub FROM servicio, usuario, region, comuna WHERE com_region = reg_id AND usu_rut = ser_usu_rut AND com_id = usu_comuna AND usu_rut = $rut";
+    $sql = "SELECT ser_id, ser_titulo, usu_nombre, usu_paterno, reg_nombre, com_nombre, ser_valor, ser_descripcion, ser_fechapub FROM servicio, usuario, region, comuna WHERE com_region = reg_id AND usu_rut = ser_usu_rut AND com_id = usu_comuna AND usu_rut = $rut ORDER BY ser_fechapub DESC";
     $query = mysqli_query($conexion, $sql);
 
     if($query)

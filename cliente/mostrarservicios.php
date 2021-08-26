@@ -66,70 +66,70 @@
                 </div> -->
 
                 <div class="contenedor-principal-servicios">
-        <div class="contenedor-btn-izquierdo">
-            <div>
-                <button type="button"><img src="https://image.flaticon.com/icons/png/512/20/20924.png"></button>
-            </div>
-        </div>
+                    <div class="contenedor-btn-izquierdo">
+                        <div>
+                            <button type="button"><img src="https://image.flaticon.com/icons/png/512/20/20924.png"></button>
+                        </div>
+                    </div>
 
-        <div class="contenedor-tarjeta">
-            
-            <div class="contenedor-informacion-tarjeta">
-                <div class="linea-izquierda"></div>
-                <div class="contenido-tarjeta">
-                    <div class="info-general">
-                        <p class="titulo"><b><?php echo $tituloServicio ?></b></p>
-                        <p class="valor">Valor: <?php echo $valorServicio ?></p>
-                        <p class="trabajador"><?php echo $nombreTrabajador?> <?php $apPaternoTrabajador?></p>
-                        <p class="ubicacion"><?php echo $nombreRegion ?>, <?php echo $nombreComuna ?></p>
-                        <div class="valoracion">Valoración: 
-                            <div class="contenedor-estrellas">
-                                <div>
-                                    <img src="../iconos/estrella.png">
+                    <div class="contenedor-tarjeta">
+                        
+                        <div class="contenedor-informacion-tarjeta">
+                            <div class="linea-izquierda"></div>
+                            <div class="contenido-tarjeta">
+                                <div class="info-general">
+                                    <p class="titulo"><b><?php echo $tituloServicio ?></b></p>
+                                    <p class="valor">Valor: <?php echo $valorServicio ?></p>
+                                    <p class="trabajador"><?php echo $nombreTrabajador?> <?php $apPaternoTrabajador?></p>
+                                    <p class="ubicacion"><?php echo $nombreRegion ?>, <?php echo $nombreComuna ?></p>
+                                    <div class="valoracion">Valoración: 
+                                        <div class="contenedor-estrellas">
+                                            <div>
+                                                <img src="../iconos/estrella.png">
+                                            </div>
+                                            <div>
+                                                <img src="../iconos/estrella.png">
+                                            </div>
+                                            <div>
+                                                <img src="../iconos/estrella.png">
+                                            </div>
+                                            <div>
+                                                <img src="../iconos/estrella.png">
+                                            </div>
+                                            <div>
+                                                <img src="../iconos/estrella2.png">
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div>
-                                    <img src="../iconos/estrella.png">
+                                <div class="contenedor-descripcion">
+                                    <p class="descripcion">Descripción</p><br>
+                                    <!-- <textarea class="tadescripcion" name="areaDescripcion" cols="30" rows="10">  </textarea> -->
+                                    <div class="tadescripcion">
+                                        <?php echo $descServicio ?>
+                                    </div>
                                 </div>
-                                <div>
-                                    <img src="../iconos/estrella.png">
-                                </div>
-                                <div>
-                                    <img src="../iconos/estrella.png">
-                                </div>
-                                <div>
-                                    <img src="../iconos/estrella2.png">
+                                <div class="contenedor-fecha-boton">
+                                    <p class="fechapub"><?php echo $fechaPublicacion ?></p>
+                                    <form action="solicitar.php" method="post">
+                                        <input type="hidden" name="<?php echo $idServicio; ?>" value="<?php echo $idServicio; ?>">
+                                            <button class="btn-solicitame" name="request"><b>SolicitaMe</b></button>
+                                            <!-- <button type="button" class="btn-solicitame" name="request"><b>SolicitaMe</b></button> -->
+                                    </form>
+                                    
                                 </div>
                             </div>
+                            <div class="linea-derecha"></div>
                         </div>
-                    </div>
-                    <div class="contenedor-descripcion">
-                        <p class="descripcion">Descripción</p><br>
-                        <!-- <textarea class="tadescripcion" name="areaDescripcion" cols="30" rows="10">  </textarea> -->
-                        <div class="tadescripcion">
-                            <?php echo $descServicio ?>
-                        </div>
-                    </div>
-                    <div class="contenedor-fecha-boton">
-                        <p class="fechapub"><?php echo $fechaPublicacion ?></p>
-                        <form action="solicitar.php" method="post">
-                            <input type="hidden" name="<?php echo $idServicio; ?>" value="<?php echo $idServicio; ?>">
-                                <button class="btn-solicitame" name="request"><b>SolicitaMe</b></button>
-                                <!-- <button type="button" class="btn-solicitame" name="request"><b>SolicitaMe</b></button> -->
-                        </form>
                         
                     </div>
-                </div>
-                <div class="linea-derecha"></div>
-            </div>
-            
-        </div>
 
-        <div class="contenedor-btn-derecho">
-            <div>
-                <button type="button"><img src="https://image.flaticon.com/icons/png/512/20/20999.png"></button>
-            </div>
-        </div>
-    </div>
+                    <div class="contenedor-btn-derecho">
+                        <div>
+                            <button type="button"><img src="https://image.flaticon.com/icons/png/512/20/20999.png"></button>
+                        </div>
+                    </div>
+                </div>
             <?php
         }
     }
