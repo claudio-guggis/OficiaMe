@@ -1,4 +1,5 @@
 <?php
+    require_once("./../database.php");
     session_start(); //siempre debe ir cuando se trabaja con variables de sesión
     if ($_SESSION['user']) 
     {
@@ -10,7 +11,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trabajador</title>
+    <title>Publicar Servicio</title>
 </head>
 <body>
     <header>
@@ -19,7 +20,7 @@
                 <img src="../imagenes/logo redondo.png" >
                 <li><a href="misservicios.php">Mis Servicios</a></li>
                 <li><a href="publicarservicio.php">Publicar Oferta</a></li>
-                <li><a href="solicitudesmisservicios.php">Solicitudes</a></li>
+                <li><a href="">Solicitudes</a></li>
             </ul>
         </div>
 
@@ -31,9 +32,11 @@
         </div>
         
     </header>
+
     <?php
-        include('mostrarmisservicios.php');
+        include('mostrarsolmisservicios.php');
     ?>
+
     <br>
     <hr>
     <p><a href="./../cerrarsesion.php">Cerrar sesión</a></p>

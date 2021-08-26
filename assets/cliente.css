@@ -1,0 +1,380 @@
+* {
+	box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+}
+
+.contenedor-flex-header {
+    display: flex;
+    height: 15%;
+    width: 100%;
+    background-color: black;
+}
+
+/* Logo */
+
+.flex-item-img {
+    padding: 15px;
+    margin-left: 40px;
+}
+
+/* Contenedor de búsqueda avanzada con filtros*/
+
+.contenedor-busqueda-trabajadores {
+
+    width: 60%;
+    margin-left: 120px;
+    margin: auto;
+}
+
+.contenedor-busqueda-trabajadores-segundo {
+    padding: 20px;
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    margin: auto;
+}
+
+.filtro {
+    display: inline-block;
+    margin-top: 15px;
+    width: 120px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+select {
+    background-color: #E2F7FF;
+    border: 2px solid #0CABE6;
+    width: 100%;
+}
+
+select:focus {
+    outline: none;
+}
+
+.contenedor-busqueda {
+    display: inline-block;
+}
+
+.contenedor-busqueda input {
+    background-color: #444444;
+    color: white;
+    padding-left: 20px;
+    padding-right: 20px;
+    border: 3px solid #0CABE6;
+    height: 40px;
+    width: 350px;
+}
+
+.contenedor-busqueda input::placeholder {
+    color: white;
+}
+
+.contenedor-busqueda input:focus {
+    outline: none;
+}
+
+.contenedor-botonbuscar {
+    display: inline-block;
+    margin-left: 30px;
+    border: 2px solid white;
+    border-radius: 5%;
+    height: 35px;
+    width: 120px;
+    background-color: yellowgreen;
+}
+
+.boton-buscar {
+    background-color: #0CABE6;
+    width: 100%;
+    height: 100%;
+    border: none;
+    color: white;
+}
+
+/* Contenedor saludo al cliente y botón opciones*/
+
+.contenedor-saludo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 300px;
+}
+
+.contenedor-saludo p {
+    font-size: 20px;
+    display: inline-block;
+    color:white;
+    
+}
+
+.contenedor-opciones{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 200px;
+}
+
+.contenedor-opciones button {
+    padding: 0;
+    border: 0;
+    width: 70px;
+    height: 70px;
+    margin-left: 50px;
+}
+
+.contenedor-opciones button img {
+    height: 100%;
+    width: 100%;
+}
+
+/* Contenedor principal de servicios */
+
+.contenedor-principal-servicios {
+    display: flex;
+    height: 75%;
+}
+
+.contenedor-btn-izquierdo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 10%;
+    height: 100%;
+    background-color: #444444;
+}
+
+.contenedor-btn-izquierdo div {
+    width: 70%;
+    height: 50%;
+    background-color: transparent;
+}
+
+.contenedor-btn-izquierdo div button{
+    border-radius: 20px;
+    width: 100%;
+    height: 100%;
+    background-color: #030303;
+    opacity: .22;
+}
+
+.contenedor-btn-izquierdo div img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+
+
+.contenedor-btn-derecho {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 10%;
+    height: 100%;
+    background-color: #444444;
+}
+
+.contenedor-btn-derecho div {
+    width: 70%;
+    height: 50%;
+    background-color: transparent;
+}
+
+.contenedor-btn-derecho div button{
+    border-radius: 20px;
+    width: 100%;
+    height: 100%;
+    background-color: #030303;
+    opacity: .22;
+}
+
+.contenedor-btn-derecho div img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+
+
+
+
+.contenedor-tarjeta {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    height: 100%;
+    background-color: #444444;
+}
+
+.contenedor-informacion-tarjeta {
+    display: flex;
+    width: 80%;
+    height: 80%;
+    background-color: #E2F7FF;
+    border: 10px solid #0CABE6;
+    border-radius: 1%;
+    padding: 20px;
+}
+
+.linea-izquierda {
+    background-color: black;
+    width: 0.5%;
+    height: 100%;
+}
+
+
+
+
+
+
+.contenido-tarjeta {
+    display: flex;
+    flex-wrap: wrap;
+    width: 99%;
+}
+
+.info-general {
+    position: relative;
+    padding: 20px;
+    height: 30%;
+    width: 100%;
+    /* background-color: tomato; */
+}
+
+.info-general p {
+    display: inline-block;
+    position: absolute;
+}
+
+.titulo {
+    width: 55%;
+    font-size: 24px;
+    left: 20px;
+}
+
+.valor {
+    font-size: 22px;
+    right: 136px;
+}
+
+.trabajador {
+    font-size: 20px;
+    left: 20px;
+    top: 50px;
+}
+
+.ubicacion {
+    left: 20px;
+    top: 80px;
+}
+
+/*Falta terminar*/
+.valoracion {
+    position: absolute;
+    right: 250px;
+    top: 60px;
+}
+
+.contenedor-estrellas {
+    display: inline-block;
+    position: absolute;
+    top: -10px;
+    width: 220px;
+}
+
+.valoracion div div {
+    display: inline-block;
+    width: 40px;
+    height: 100%;
+}
+
+.valoracion div img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+
+/* Contenedor para descripcion*/
+.contenedor-descripcion {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    padding: 5px;
+    height: 45%;
+    width: 100%;
+    /* background-color: violet; */
+}
+
+.tadescripcion {
+    border: 5px solid #0CABE6;
+    background-color: transparent;
+    width: 95%;
+    height: 70%;
+    padding: 10px;
+}
+
+
+
+/* contenedor inferior para fecha y botón solicitame */
+
+.contenedor-fecha-boton {
+    position: relative;
+    padding: 10px;
+    height: 25%;
+    width: 100%;
+    /* background-color: yellowgreen; */
+}
+
+.fechapub {
+    position: absolute;
+    bottom: 0;
+}
+
+.btn-solicitame {
+    position: absolute;
+    border-radius: 10px;
+    border: 2px solid black;
+    background-color: #0CABE6;
+    color: white;
+    font-size: 18px;
+    outline: none;
+    width: 250px;
+    height: 50px;
+    right: 40px;
+    bottom: 10px;
+}
+
+.linea-derecha {
+    background-color: black;
+    width: 0.4%;
+    height: 100%;
+}
+
+
+/*Footer*/
+
+footer {
+    height: 10%;
+    background-color: black;
+    text-align: center;
+}
+
+footer p {
+    margin: 0;
+}
+

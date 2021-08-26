@@ -73,7 +73,7 @@
              */
             else
             {
-                echo $sql;
+                //echo $sql;
                 echo "<script text='text/javascript'>
                 alert('Ups! No se ha podido publicar tu servicio');
                 window.location = 'publicarservicio.php';

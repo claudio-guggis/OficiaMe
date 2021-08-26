@@ -9,15 +9,72 @@ body {
  	align-items: center;
  	justify-content: center;
 }
+.contenedor-logo{
+	width: 250px;
+	height: 250px;
+	margin-top: 20px;
 
+
+}
+.form-section{
+	display:inline-block;
+
+
+
+
+
+}
+.contenedor-logo img{
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+
+
+
+}
+.selector{
+
+	display: block;
+
+}
+.label-comuna{
+
+	color: white;
+
+
+
+
+
+
+}
+.label-sex{
+
+	color: white;
+
+
+
+
+
+
+}
+.label-reg{
+
+	color: white;
+
+
+
+
+
+
+}
 .contenedor-flexible {
 	display: flex;
 	border-radius: 10px;
 	align-items: center;
 	justify-content: center;
 	text-align: center;
-	width: 400px;
-	height: 600px;
+	width: 750px;
+	height: 900px;
 	flex-wrap: wrap;
 	background: #111;
 	border: 10px solid #222;
@@ -25,7 +82,8 @@ body {
 
 .form {
 	padding: 50px;
-	margin-top: 150px;
+	margin-top: 10px;
+	text-align: center;
 }
 
 .contenedor-label {

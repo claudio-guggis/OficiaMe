@@ -46,6 +46,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="assets/signup.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <!-- <link rel="stylesheet" type="text/css" href="assets/login.css"> -->
     <title>Registrarse</title>
@@ -80,77 +81,49 @@
 
                     </select>
 
-                    <div class="contenedor-label">
-                        <label class="label-rut">Rut</label>
-                    </div>
+                
                     
+                
+
+
                     <div class="form-section">
-                        <input type="text" class="form-input" name="user" placeholder="RUT">
+                        <input type="text" class="form-input" name="nombre" placeholder="Nombre"> 
                     </div>
 
-                    <div class="contenedor-label">
-                        <label class="label-pass">Contraseña</label>
+                    <div class="form-section">
+                        <input type="text" class="form-input" name="rut" placeholder="Rut"> 
                     </div>
 
                     <div class="form-section">
                         <input type="password" class="form-input" name="pass" placeholder="Contraseña"> 
                     </div>
 
-                    <div class="contenedor-label">
-                        <label class="label-nombre">Nombre</label>
+                    <div class="form-section">
+                        <input type="text" class="form-input" name="apaterno" placeholder="Apellido parterno"> 
                     </div>
 
                     <div class="form-section">
-                        <input type="text" name="nombre" placeholder="Nombre...">
-                    </div>
-
-                    <div class="contenedor-label">
-                        <label class="label-paterno">Apellido paterno</label>
+                        <input type="text" class="form-input" name="amaterno" placeholder="Apellido materno"> 
                     </div>
 
                     <div class="form-section">
-                        <input type="text" name="paterno" placeholder="Su apellido paterno">
-                    </div>
-
-                    <div class="contenedor-label">
-                        <label class="label-materno">Apellido materno</label>
+                        <input type="text" class="form-input" name="celectronico" placeholder="Correo electronico"> 
                     </div>
 
                     <div class="form-section">
-                        <input type="text" name="materno" placeholder="Su apellido materno">
-                    </div>
-
-                    <div class="contenedor-label">
-                        <label class="label-mail">Correo electrónico</label>
+                        <input type="text" class="form-input" name="ncelular" placeholder="Numero celular"> 
                     </div>
 
                     <div class="form-section">
-                        <input type="email" name="mail" placeholder="Su email">
-                    </div>
-
-                    <div class="contenedor-label">
-                        <label class="label-numero">Número celular</label>
+                        <input type="text" class="form-input" name="nombre" placeholder="Dirección particular"> 
                     </div>
 
                     <div class="form-section">
-                        <input type="number" name="num" placeholder="Su número de celular">
+                        <input type="date" class="form-input" name="nombre" placeholder="Fecha de nacimiento"> 
                     </div>
 
-                    <div class="contenedor-label">
-                        <label class="label-direccion">Dirección particular</label>
-                    </div>
 
-                    <div class="form-section">
-                        <input type="text" name="direccion" placeholder="Su direccion">
-                    </div>
-
-                    <div class="contenedor-label">
-                        <label class="label-fechanac">Fecha de nacimiento</label>
-                    </div>
-
-                    <div class="form-section">
-                        <input type="date" name="fecha">
-                    </div>
+                
 
                     <!-- <div class="form-section">
                         <input type="text" name="fecha" placeholder="Fecha nacimiento">
@@ -161,7 +134,7 @@
                     </div>
 
                     <div class="form-section">
-                        <select class="selector" name="sex">
+                        <select class="selectorsex" name="sex">
                             <?php
                                 echo llenarSexo($conexion);
                             ?>
@@ -173,7 +146,7 @@
                     </div>
 
                     <div class="form-section">
-                        <select class="selector" id="regs" name="regs" onchange="changeFunction(this)">
+                        <select class="selectorreg" id="regs" name="regs" onchange="changeFunction(this)">
                             <?php
                                 // $sql = "SELECT reg_id, reg_nombre FROM region";
                                 // $query = mysqli_query($conexion, $sql);
@@ -195,7 +168,7 @@
 
                     <div class="form-section">
                         <!-- <input type="hidden" name="selectInput" id="showValue" value=""> -->
-                        <select class="selector" id="show_comuna" name="com">
+                        <select class="selectorcom" id="show_comuna" name="com">
                             <?php
                                 // $sql = "SELECT com_id, com_nombre FROM comuna";
                                 // $query = mysqli_query($conexion, $sql);
