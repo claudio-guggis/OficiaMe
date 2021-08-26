@@ -49,11 +49,13 @@
                 $_SESSION['user'] = $usuario;
                 $_SESSION['type'] = $tipo;
 
+                //borramos los comentarios 
+
                 if ($tipo == 'C') {
-                    //header("Location: admin.php");
+                    
                 }
                 elseif ($tipo == 'T') {
-                    # code...
+                    
                 }
                 else
                 {
