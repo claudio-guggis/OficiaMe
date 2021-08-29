@@ -1,5 +1,17 @@
 <?php
+    require_once('database.php');
     session_start(); //siempre debe ir cuando se trabaja con variables de sesión
+
+    function ponNombre($conexion)
+    {
+        $rut = $_SESSION['user'];
+        $sql = "SELECT usu_nombre FROM usuario WHERE usu_rut = '$rut'";
+        $query = mysqli_query($conexion, $sql);
+        $valor = mysqli_fetch_array($query);
+        $row = $valor[0];
+        echo $row;
+    }
+
     if ($_SESSION['user']) 
     {
 ?>
@@ -25,7 +37,7 @@
 
         <div class="contenedor-opciones">
             <ul>
-                <li>Hola Trabajador <?php echo $_SESSION['user']; ?></li>
+                <li>Hola Trabajador <?php echo ponNombre($conexion); ?></li>
                 <li><a href="">Opciones</a></li>
             </ul>
         </div>

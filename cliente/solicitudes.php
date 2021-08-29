@@ -28,6 +28,16 @@
         echo '<option value="0" selected >Seleccione...</option>';
         //return $output;
     }
+
+    function ponNombre($conexion)
+    {
+        $rut = $_SESSION['user'];
+        $sql = "SELECT usu_nombre FROM usuario WHERE usu_rut = '$rut'";
+        $query = mysqli_query($conexion, $sql);
+        $valor = mysqli_fetch_array($query);
+        $row = $valor[0];
+        echo $row;
+    }
     
     if ($_SESSION['user']) 
     {
@@ -58,8 +68,8 @@
 
                 <div class="dropdown-certificado">
                     <select name="cert">
-                        <option value="NC" selected>No certificado</option>
-                        <option value="C">Certificado</option>
+                        <option value="N" selected>No certificado</option>
+                        <option value="S">Certificado</option>
                     </select>
                 </div>
 
@@ -84,7 +94,7 @@
         </div>
 
         <div class="contenedor-saludo">
-            <p>Hola Cliente <?php echo $_SESSION['user']; ?></p>
+            <p>Hola Cliente <?php echo ponNombre($conexion); ?></p>
         </div>
 
         <div class="contenedor-opciones">
