@@ -9,14 +9,14 @@
     $comuna = $_GET['com'];
     $rutCliente = $_SESSION['user'];
 
-    if($region == '0')
-    {
-        $region = "reg_id";
-    }
-    else
-    {
-        $region = "'".$region."'";
-    }
+    // if($region == '0')
+    // {
+    //     $region = "reg_id";
+    // }
+    // else
+    // {
+    //     $region = "'".$region."'";
+    // }
 
     if($comuna == '0')
     {
@@ -24,7 +24,7 @@
     }
     // else
     // {
-    //     $comuna = "'".$comuna."'";
+    //     $comuna = $comuna;
     // }
 
     if($certificacion == 'S')
@@ -35,8 +35,8 @@
             AND usu_rut = ser_usu_rut
             AND com_id = usu_comuna
             AND ser_usu_rut IN (SELECT cer_usu_rut FROM certificacion)
-            AND (usu_nombre LIKE '%$bpersonalizada%' OR ser_titulo LIKE '%$bpersonalizada%')
-            AND reg_id = $region
+            AND (usu_nombre LIKE '%$bpersonalizada%' OR ser_titulo LIKE '%$bpersonalizada%' OR ser_descripcion LIKE '%$bpersonalizada%')
+            AND reg_id = '$region'
             AND com_id = $comuna
             AND  NOT EXISTS (SELECT sol_servicio, sol_usu_rut
                             FROM solicitud
@@ -64,8 +64,8 @@
             AND usu_rut = ser_usu_rut
             AND com_id = usu_comuna
             AND ser_usu_rut IN (SELECT cer_usu_rut FROM certificacion)
-            AND (usu_nombre LIKE '%$bpersonalizada%' OR ser_titulo LIKE '%$bpersonalizada%')
-            AND reg_id = $region
+            AND (usu_nombre LIKE '%$bpersonalizada%' OR ser_titulo LIKE '%$bpersonalizada%' OR ser_descripcion LIKE '%$bpersonalizada%')
+            AND reg_id = '$region'
             AND com_id = $comuna
             AND  NOT EXISTS (SELECT sol_servicio, sol_usu_rut
                             FROM solicitud
@@ -81,8 +81,8 @@
             AND usu_rut = ser_usu_rut
             AND com_id = usu_comuna
             AND ser_usu_rut NOT IN (SELECT cer_usu_rut FROM certificacion)
-            AND (usu_nombre LIKE '%$bpersonalizada%' OR ser_titulo LIKE '%$bpersonalizada%')
-            AND reg_id = $region
+            AND (usu_nombre LIKE '%$bpersonalizada%' OR ser_titulo LIKE '%$bpersonalizada%' OR ser_descripcion LIKE '%$bpersonalizada%')
+            AND reg_id = '$region'
             AND com_id = $comuna
             AND  NOT EXISTS (SELECT sol_servicio, sol_usu_rut
                             FROM solicitud
@@ -110,8 +110,8 @@
             AND usu_rut = ser_usu_rut
             AND com_id = usu_comuna
             AND ser_usu_rut NOT IN (SELECT cer_usu_rut FROM certificacion)
-            AND (usu_nombre LIKE '%$bpersonalizada%' OR ser_titulo LIKE '%$bpersonalizada%')
-            AND reg_id = $region
+            AND (usu_nombre LIKE '%$bpersonalizada%' OR ser_titulo LIKE '%$bpersonalizada%' OR ser_descripcion LIKE '%$bpersonalizada%')
+            AND reg_id = '$region'
             AND com_id = $comuna
             AND  NOT EXISTS (SELECT sol_servicio, sol_usu_rut
                             FROM solicitud
@@ -121,8 +121,8 @@
     }
     
 
-        //echo $sql2;
-
+        // echo $sql;
+        // exit();
 
         $query = mysqli_query($conexion, $sql);
 
@@ -139,7 +139,7 @@
         {
             echo '<option value="'.$valores['reg_id'].'">'.$valores['reg_nombre'].'</option>';
         }
-        echo '<option value="0" selected >Seleccione...</option>';
+        // echo '<option value="0" selected >Seleccione...</option>';
         //return $output;
     }
 
@@ -350,11 +350,22 @@
             }
             else
             {
-                ?>
-                <div class="col-lg-3">
-                    <a href="busqueda.php?busq-pers=<?php echo $bpersonalizada ?>&cert=<?php echo $certificacion ?>&regs=<?php echo $region ?>&com=<?php echo $comuna ?>&page=<?php echo $inicio-3 ?>">Anterior</a>
-                </div>
-                <?php
+                if($inicio == 3)
+                {
+                    ?>
+                    <div class="col-lg-3">
+                        <a href="busqueda.php?busq-pers=<?php echo $bpersonalizada ?>&cert=<?php echo $certificacion ?>&regs=<?php echo $region ?>&com=<?php echo $comuna ?>">Anterior</a>
+                    </div>
+                    <?php
+                }
+                else
+                {
+                    ?>
+                    <div class="col-lg-3">
+                        <a href="busqueda.php?busq-pers=<?php echo $bpersonalizada ?>&cert=<?php echo $certificacion ?>&regs=<?php echo $region ?>&com=<?php echo $comuna ?>&page=<?php echo $inicio-3 ?>">Anterior</a>
+                    </div>
+                    <?php
+                }
             }
         ?>
         <div class="col-lg-3">

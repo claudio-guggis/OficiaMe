@@ -21,6 +21,7 @@
         {
             $output .= '<option value="'.$valores['com_id'].'" >'.$valores['com_nombre'].'</option>';
         }
+        $output .= '<option value="0" selected >Seleccione...</option>';
         echo $output;
     }
 ?>

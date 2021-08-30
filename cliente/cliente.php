@@ -12,7 +12,7 @@
         {
             echo '<option value="'.$valores['reg_id'].'">'.$valores['reg_nombre'].'</option>';
         }
-        echo '<option value="0" selected >Seleccione...</option>';
+        // echo '<option value="0" selected >Seleccione...</option>';
         //return $output;
     }
 
@@ -77,6 +77,7 @@
                             <select class="filtro-cert" name="cert">
                                 <option value="N" selected>No certificado</option>
                                 <option value="S">Certificado</option>
+                                <!-- <option value="0">Seleccione...</option> -->
                             </select>
                         </div>
 
