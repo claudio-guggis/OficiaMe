@@ -1,5 +1,19 @@
 <?php
+    require_once("./../database.php");
     session_start(); //siempre debe ir cuando se trabaja con variables de sesión
+
+    function llenarNomTablas($conexion)
+    {
+        $sql = "SHOW TABLES FROM prueba_ofme WHERE Tables_in_prueba_ofme = 'comuna' OR Tables_in_prueba_ofme = 'eservicio' OR Tables_in_prueba_ofme = 'esolicitud' OR Tables_in_prueba_ofme = 'eusuario' OR Tables_in_prueba_ofme = 'nota' OR Tables_in_prueba_ofme = 'region' OR Tables_in_prueba_ofme = 'sexo' OR Tables_in_prueba_ofme = 'tcertificacion' OR Tables_in_prueba_ofme = 'tservicio' OR Tables_in_prueba_ofme = 'tusuario'";
+
+        $query = mysqli_query($conexion, $sql);
+
+        while($valores = mysqli_fetch_array($query))
+        {
+            echo '<option value="'.$valores['Tables_in_prueba_ofme'].'" selected >'.$valores['Tables_in_prueba_ofme'].'</option>';
+        }
+    }
+
     if ($_SESSION['user']) 
     {
 ?>
@@ -16,7 +30,7 @@
     <header>
         <div class="contenedor-subsecciones">
             <ul>
-                <img src="imagenes/logo redondo.png" >
+                <img src="../imagenes/logo redondo.png" >
                 <li><a href="mantenertb.php">Mantener tablas básicas</a></li>
                 <li><a href="">Mantener cuentas de usuario</a></li>
                 <li><a href="">Reportes</a></li>
@@ -42,7 +56,7 @@
 
             <div class="contenedor-nombre-tablas">
                 <select class="selector-tb" name="nomtablas" onchange="changeFunction(this)" >
-                    <option value="region" selected>Region</option>
+                    <!-- <option value="region" selected>Region</option>
                     <option value="comuna">Comuna</option>
                     <option value="sexo">Sexo</option>
                     <option value="tusuario">Tusuario</option>
@@ -51,7 +65,10 @@
                     <option value="nota">Nota</option>
                     <option value="esolicitud">Esolicitud</option>
                     <option value="tservicio">Tservicio</option>
-                    <option value="eservicio">Eservicio</option>
+                    <option value="eservicio">Eservicio</option> -->
+                    <?php
+                    echo llenarNomTablas($conexion);
+                    ?>
                 </select>
             </div>
 
@@ -94,7 +111,7 @@
 
     <br>
     <hr>
-    <p><a href="cerrarsesion.php">Cerrar sesión</a></p>
+    <p><a href="../cerrarsesion.php">Cerrar sesión</a></p>
 </body>
 </html>
 <?php

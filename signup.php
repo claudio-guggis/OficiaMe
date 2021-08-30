@@ -34,9 +34,19 @@
         $query = mysqli_query($conexion, $sql);
         while($valores = mysqli_fetch_array($query))
         {
-            echo '<option value="'.$valores['sex_id'].'" selected >'.$valores['sex_nom'].'</option>';
+            echo '<option value="'.$valores['sex_id'].'" selected >'.$valores['sex_nombre'].'</option>';
         }
         //return $output;
+    }
+
+    function llenarTipo($conexion)
+    {
+        $sql = "SELECT * FROM tusuario WHERE tusu_id = 'C' OR  tusu_id = 'T'";
+        $query = mysqli_query($conexion, $sql);
+        while($valores = mysqli_fetch_array($query))
+        {
+            echo '<option value="'.$valores['tusu_id'].'" selected >'.$valores['tusu_nombre'].'</option>';
+        }
     }
 
 ?>
@@ -71,12 +81,7 @@
                         
                         <!-- <option value="0">Seleccione...</option> -->
                         <?php
-                            $sql = "SELECT * FROM tusuario WHERE tusu_id = 'C' OR  tusu_id = 'T'";
-                            $query = mysqli_query($conexion, $sql);
-                            while($valores = mysqli_fetch_array($query))
-                            {
-                                echo '<option value="'.$valores['tusu_id'].'" selected >'.$valores['tusu_nombre'].'</option>';
-                            }
+                            echo llenarTipo($conexion);
                         ?>
 
                     </select>

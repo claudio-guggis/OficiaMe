@@ -1,5 +1,5 @@
 <?php
-    require_once('database.php');
+    require_once('./../database.php');
     session_start(); //siempre debe ir cuando se trabaja con variables de sesión
 
     function ponNombre($conexion)

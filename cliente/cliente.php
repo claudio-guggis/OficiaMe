@@ -114,63 +114,6 @@
 
     <?php include('mostrarservicios.php') ?>
     
-    <!-- <div class="contenedor-principal-servicios">
-        <div class="contenedor-btn-izquierdo">
-            <div>
-                <button type="button"><img src="https://image.flaticon.com/icons/png/512/20/20924.png"></button>
-            </div>
-        </div>
-
-        <div class="contenedor-tarjeta">
-            
-            <div class="contenedor-informacion-tarjeta">
-                <div class="linea-izquierda"></div>
-                <div class="contenido-tarjeta">
-                    <div class="info-general">
-                        <p class="titulo"><b>Título del servicio</b></p>
-                        <p class="valor">Valor: Sin especificar</p>
-                        <p class="trabajador">Trabajador</p>
-                        <p class="ubicacion">Región, comuna</p>
-                        <div class="valoracion">Valoración: 
-                            <div class="contenedor-estrellas">
-                                <div>
-                                    <img src="../iconos/estrella.png">
-                                </div>
-                                <div>
-                                    <img src="../iconos/estrella.png">
-                                </div>
-                                <div>
-                                    <img src="../iconos/estrella.png">
-                                </div>
-                                <div>
-                                    <img src="../iconos/estrella.png">
-                                </div>
-                                <div>
-                                    <img src="../iconos/estrella2.png">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="contenedor-descripcion">
-                        <p class="descripcion">Descripción</p><br>
-                        <textarea class="tadescripcion" name="areaDescripcion" cols="30" rows="10"></textarea>
-                    </div>
-                    <div class="contenedor-fecha-boton">
-                        <p class="fechapub">Fecha de publicación: 08/06/2021</p>
-                        <button type="button" class="btn-solicitame"><b>SolicitaMe</b></button>
-                    </div>
-                </div>
-                <div class="linea-derecha"></div>
-            </div>
-            
-        </div>
-
-        <div class="contenedor-btn-derecho">
-            <div>
-                <button type="button"><img src="https://image.flaticon.com/icons/png/512/20/20999.png"></button>
-            </div>
-        </div>
-    </div> -->
 
     <footer>
         <p><a href="./../cerrarsesion.php">Cerrar sesión</a></p>

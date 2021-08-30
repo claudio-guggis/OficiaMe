@@ -53,7 +53,7 @@
                             FROM solicitud
                             WHERE ser_id = sol_servicio
                             AND sol_usu_rut = '$rutCliente') ORDER BY ser_fechapub DESC
-                            LIMIT $inicio, 1";
+                            LIMIT $inicio, 3";
     }
     else
     {
@@ -99,7 +99,7 @@
                             FROM solicitud
                             WHERE ser_id = sol_servicio
                             AND sol_usu_rut = '$rutCliente') ORDER BY ser_fechapub DESC
-                            LIMIT $inicio, 1";
+                            LIMIT $inicio, 3";
     }
     
 
@@ -252,11 +252,11 @@
 
         ?>
                 <div class="contenedor-principal-servicios">
-                    <div class="contenedor-btn-izquierdo">
+                    <!-- <div class="contenedor-btn-izquierdo">
                         <div>
                             <button type="button"><img src="https://image.flaticon.com/icons/png/512/20/20924.png"></button>
                         </div>
-                    </div>
+                    </div> -->
 
                     <div class="contenedor-tarjeta">
                         
@@ -309,18 +309,18 @@
                         </div>
                         
                     </div>
-
-                    <div class="contenedor-btn-derecho">
+                    <!-- <div class="contenedor-btn-derecho">
                         <div>
                             <button type="button"><img src="https://image.flaticon.com/icons/png/512/20/20999.png"></button>
                         </div>
-                    </div>
-                            
+                    </div>  -->
                 </div>
         <?php
             }
         }
     ?>
+
+    
     
     <div class="row">
         <?php
@@ -334,7 +334,7 @@
             {
                 ?>
                 <div class="col-lg-3">
-                    <a href="busqueda.php?busq-pers=<?php echo $bpersonalizada ?>&cert=<?php echo $certificacion ?>&regs=<?php echo $region ?>&com=<?php echo $comuna ?>&page=<?php echo $inicio-1 ?>">Anterior</a>
+                    <a href="busqueda.php?busq-pers=<?php echo $bpersonalizada ?>&cert=<?php echo $certificacion ?>&regs=<?php echo $region ?>&com=<?php echo $comuna ?>&page=<?php echo $inicio-3 ?>">Anterior</a>
                 </div>
                 <?php
             }
@@ -344,15 +344,15 @@
                 if($inicio == 0)
                 {
                     ?>
-                    <a href="busqueda.php?busq-pers=<?php echo $bpersonalizada ?>&cert=<?php echo $certificacion ?>&regs=<?php echo $region ?>&com=<?php echo $comuna ?>&page=<?php echo $inicio+1 ?>">Siguiente</a>
+                    <a href="busqueda.php?busq-pers=<?php echo $bpersonalizada ?>&cert=<?php echo $certificacion ?>&regs=<?php echo $region ?>&com=<?php echo $comuna ?>&page=<?php echo $inicio+3 ?>">Siguiente</a>
                     <?php
                 }
                 else
                 {
-                    if($impreso == 1)
+                    if($impreso == 3)
                     {
                         ?>
-                        <a href="busqueda.php?busq-pers=<?php echo $bpersonalizada ?>&cert=<?php echo $certificacion ?>&regs=<?php echo $region ?>&com=<?php echo $comuna ?>&page=<?php echo $inicio+1 ?>">Siguiente</a>
+                        <a href="busqueda.php?busq-pers=<?php echo $bpersonalizada ?>&cert=<?php echo $certificacion ?>&regs=<?php echo $region ?>&com=<?php echo $comuna ?>&page=<?php echo $inicio+3 ?>">Siguiente</a>
                         <?php
                     }
 
