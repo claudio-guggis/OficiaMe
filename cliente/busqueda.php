@@ -9,6 +9,24 @@
     $comuna = $_GET['com'];
     $rutCliente = $_SESSION['user'];
 
+    if($region == '0')
+    {
+        $region = "reg_id";
+    }
+    else
+    {
+        $region = "'".$region."'";
+    }
+
+    if($comuna == '0')
+    {
+        $comuna = "com_id";
+    }
+    // else
+    // {
+    //     $comuna = "'".$comuna."'";
+    // }
+
     if($certificacion == 'S')
     {
         $sql2 = "SELECT COUNT(ser_id) as cantidad
@@ -18,8 +36,8 @@
             AND com_id = usu_comuna
             AND ser_usu_rut IN (SELECT cer_usu_rut FROM certificacion)
             AND (usu_nombre LIKE '%$bpersonalizada%' OR ser_titulo LIKE '%$bpersonalizada%')
-            AND reg_id = '$region'
-            AND com_id = '$comuna'
+            AND reg_id = $region
+            AND com_id = $comuna
             AND  NOT EXISTS (SELECT sol_servicio, sol_usu_rut
                             FROM solicitud
                             WHERE ser_id = sol_servicio
@@ -47,8 +65,8 @@
             AND com_id = usu_comuna
             AND ser_usu_rut IN (SELECT cer_usu_rut FROM certificacion)
             AND (usu_nombre LIKE '%$bpersonalizada%' OR ser_titulo LIKE '%$bpersonalizada%')
-            AND reg_id = '$region'
-            AND com_id = '$comuna'
+            AND reg_id = $region
+            AND com_id = $comuna
             AND  NOT EXISTS (SELECT sol_servicio, sol_usu_rut
                             FROM solicitud
                             WHERE ser_id = sol_servicio
@@ -64,8 +82,8 @@
             AND com_id = usu_comuna
             AND ser_usu_rut NOT IN (SELECT cer_usu_rut FROM certificacion)
             AND (usu_nombre LIKE '%$bpersonalizada%' OR ser_titulo LIKE '%$bpersonalizada%')
-            AND reg_id = '$region'
-            AND com_id = '$comuna'
+            AND reg_id = $region
+            AND com_id = $comuna
             AND  NOT EXISTS (SELECT sol_servicio, sol_usu_rut
                             FROM solicitud
                             WHERE ser_id = sol_servicio
@@ -93,8 +111,8 @@
             AND com_id = usu_comuna
             AND ser_usu_rut NOT IN (SELECT cer_usu_rut FROM certificacion)
             AND (usu_nombre LIKE '%$bpersonalizada%' OR ser_titulo LIKE '%$bpersonalizada%')
-            AND reg_id = '$region'
-            AND com_id = '$comuna'
+            AND reg_id = $region
+            AND com_id = $comuna
             AND  NOT EXISTS (SELECT sol_servicio, sol_usu_rut
                             FROM solicitud
                             WHERE ser_id = sol_servicio

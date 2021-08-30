@@ -66,11 +66,6 @@
                 </div> -->
 
                 <div class="contenedor-principal-servicios">
-                    <div class="contenedor-btn-izquierdo">
-                        <div>
-                            <button type="button"><img src="https://image.flaticon.com/icons/png/512/20/20924.png"></button>
-                        </div>
-                    </div>
 
                     <div class="contenedor-tarjeta">
                         
@@ -123,12 +118,7 @@
                         </div>
                         
                     </div>
-
-                    <div class="contenedor-btn-derecho">
-                        <div>
-                            <button type="button"><img src="https://image.flaticon.com/icons/png/512/20/20999.png"></button>
-                        </div>
-                    </div>
+                    
                 </div>
             <?php
         }

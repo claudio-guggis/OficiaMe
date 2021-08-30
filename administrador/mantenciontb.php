@@ -101,7 +101,7 @@
                         <input type="text" name="name" placeholder="Nuevo nombre">
                     </div>
                     <div class="contenedor-boton">
-                        <button class="btn-edit">Editar</button>
+                        <button class="btn-edit">Actualizar</button>
                     </div>
                 </form>
                 <?php
