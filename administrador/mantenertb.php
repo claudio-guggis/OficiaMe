@@ -30,14 +30,16 @@
             </ul>
         </div>
         
-    </header>
+    </header> 
+
+
     <h1>Mantenedor de tablas básicas</h1>
 
     <div class = "contenedor-principal">
 
         <form class="form" action="mantenciontb.php" method="post">
             <div class="contenedor-label">
-                <label class="label-nomtabla">Nombre tabla</label>
+                <label class="label-nomtabla">Mantención de tablas</label>
             </div>
 
             <div class="contenedor-nombre-tablas">

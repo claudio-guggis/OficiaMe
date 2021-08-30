@@ -65,7 +65,7 @@
                     </p>
                 </div> -->
 
-                <div class="contenedor-principal-servicios">
+    <div class="contenedor-principal-servicios">
         <div class="contenedor-btn-izquierdo">
             <div>
                 <button type="button"><img src="https://image.flaticon.com/icons/png/512/20/20924.png"></button>
