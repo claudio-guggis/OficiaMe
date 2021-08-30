@@ -22,41 +22,45 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../assets/publicaroferta.css">
     <title>Publicar Servicio</title>
 </head>
 <body>
-    <header>
+    <header class="contenedor-flex-header">
+        <img src="../imagenes/logo redondo.png" class="flex-item-logo"> 
+
         <div class="contenedor-subsecciones">
-            <ul>
-                <img src="../imagenes/logo redondo.png" >
-                <li><a href="misservicios.php">Mis Servicios</a></li>
-                <li><a href="publicarservicio.php">Publicar Oferta</a></li>
-                <li><a href="solicitudesmisservicios.php">Solicitudes</a></li>
-            </ul>
+            <button class="btn-ms" type="button" onclick="location.href='misservicios.php'">Mis Servicios</button>
+            <button class="btn-po" type="button">Publicar Oferta</button>
+            <button class="btn-sol" type="button" onclick="location.href='solicitudesmisservicios.php'">Solicitudes</button>
+        </div>
+
+        <div class="contenedor-saludo">
+            <p>Hola <?php echo ponNombre($conexion); ?> </p>
+            
         </div>
 
         <div class="contenedor-opciones">
-            <ul>
-                <li>Hola Trabajador <?php echo ponNombre($conexion); ?></li>
-                <li><a href="">Opciones</a></li>
-            </ul>
+            <button type="button"><img src="../iconos/btn_opciones.png"></button>
         </div>
         
     </header>
 
     <div class="contenedor-publicar">
-        <div class="label-datos">
-            <label for="">Datos del servicio</label>
-        </div>
+        
+        <div class="contenedor-formulario">
 
-        <div class="form-servicio">
+            <div class="label-datos">
+                <label for="">Datos del servicio</label>
+            </div>
+
             <form action="registrarservicio.php" class="form" method="post">
 
-                <div class="form-section">
+                <div class="form-section-titulo">
                     <input type="text" name="sertitulo" placeholder="Ingrese título...">
                 </div>
 
-                <div class="form-section">
+                <div class="form-section-selector">
                     <select class="selector" name="sertipo">
                         <!-- <option value="T">Trabajador</option>
                         <option value="C" selected>Cliente</option> -->
@@ -74,12 +78,12 @@
                     </select>
                 </div>
 
-                <div class="form-action">
+                <div class="form-section-valor">
                     <input type="text" name="servalor" placeholder="Valor (opcional)">
                 </div>
 
-                <div class="form-action">
-                    <input type="text" name="serdescripcion" placeholder="Descripción...">
+                <div class="form-section-descripcion">
+                    <textarea name="serdescripcion" placeholder="Descripción..."></textarea>
                 </div>
 
                 <button class="btn-publicar" name="serpublicar">Publicar</button>
@@ -88,9 +92,9 @@
         </div>
     </div>
 
-    <br>
-    <hr>
-    <p><a href="./../cerrarsesion.php">Cerrar sesión</a></p>
+    <footer>
+        <p><a href="./../cerrarsesion.php">Cerrar sesión</a></p>
+    </footer>
 </body>
 </html>
 <?php

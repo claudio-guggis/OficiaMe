@@ -11,6 +11,8 @@ body {
     margin: 0;
 }
 
+/* ------------------------- header ------------------------- */
+
 .contenedor-flex-header {
     display: flex;
     height: 15%;
@@ -18,120 +20,90 @@ body {
     background-color: black;
 }
 
-/* Logo */
+.contenedor-flex-header div {
+    display: inline-block;
+}
 
-.flex-item-img {
+.flex-item-logo {
     padding: 15px;
     margin-left: 40px;
 }
 
-/* Contenedor de búsqueda avanzada con filtros*/
-
-.contenedor-busqueda-trabajadores {
-
+.contenedor-subsecciones {
+    position: relative;
+    left: 40px;
+    height: 100%;
     width: 60%;
-    margin-left: 120px;
-    margin: auto;
 }
 
-.contenedor-busqueda-trabajadores-segundo {
-    padding: 20px;
-    display: block;
-    width: 100%;
+.contenedor-subsecciones button{
+    color: white;
+    font-size: 20px;
+    background-color: black;
     height: 100%;
-    text-align: center;
-    margin: auto;
+    width: 250px;
+    border-left: 2px solid #0CABE6;
+    border-right: 2px solid #0CABE6;
+    border-top: none;
 }
 
-.filtro {
-    display: inline-block;
-    margin-top: 15px;
-    width: 120px;
-    margin-left: 10px;
-    margin-right: 10px;
+.contenedor-subsecciones button:hover {
+    position: relative;
+    bottom: 10px;
+    border-bottom: 20px solid #0CABE6;
 }
 
-select {
-    background-color: #E2F7FF;
-    border: 2px solid #0CABE6;
-    width: 100%;
+.btn-ms {
+    position: relative;
+    bottom: 10px;
+    border-bottom: 20px solid #0CABE6;
 }
 
-select:focus {
-    outline: none;
+.btn-sol {
+    border-bottom: 2px solid #0CABE6;
 }
 
-.contenedor-busqueda {
-    display: inline-block;
+.btn-po {
+    border-bottom: 2px solid #0CABE6;
 }
 
-.contenedor-busqueda input {
-    background-color: #444444;
-    color: white;
-    padding-left: 20px;
-    padding-right: 20px;
-    border: 3px solid #0CABE6;
-    height: 40px;
-    width: 350px;
-}
 
-.contenedor-busqueda input::placeholder {
-    color: white;
-}
-
-.contenedor-busqueda input:focus {
-    outline: none;
-}
-
-.contenedor-botonbuscar {
-    display: inline-block;
-    margin-left: 30px;
-    border: 2px solid white;
-    border-radius: 5%;
-    height: 35px;
-    width: 120px;
-    background-color: yellowgreen;
-}
-
-.boton-buscar {
-    background-color: #0CABE6;
-    width: 100%;
-    height: 100%;
-    border: none;
-    color: white;
-}
-
-/* Contenedor saludo al cliente y botón opciones*/
+/*------------------------------------------------------------------------------------------*/
 
 .contenedor-saludo {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    width: 300px;
+    position: relative;
+    width: 20%;
+    color: white;
 }
 
 .contenedor-saludo p {
+    position: absolute;
+    top: calc(50% - 15px);
+    left: calc(50% - 100px);
     font-size: 20px;
-    display: inline-block;
-    color:white;
-    
+    width: 200px;
+    height: 30px;
+    text-align: center;
 }
 
-.contenedor-opciones{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+
+
+.contenedor-opciones {
+    position: relative;
     height: 100%;
-    width: 200px;
+    width: 10%;
+    /* border: 4px solid red; */
 }
+
 
 .contenedor-opciones button {
+    position: absolute;
+    left: 50%; 
+    top: calc(50% - 35px);
     padding: 0;
     border: 0;
     width: 70px;
     height: 70px;
-    margin-left: 50px;
 }
 
 .contenedor-opciones button img {
@@ -139,12 +111,13 @@ select:focus {
     width: 100%;
 }
 
-/* Contenedor principal de servicios */
+/* ------------------------- cuerpo -------------------------  */
 
-.contenedor-principal-servicios {
+.contenedor-principal-misservicios {
     display: flex;
     height: 75%;
 }
+
 
 .contenedor-btn-izquierdo {
     display: flex;
@@ -214,14 +187,14 @@ select:focus {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
+    width: 80%;
     height: 100%;
     background-color: #444444;
 }
 
 .contenedor-informacion-tarjeta {
     display: flex;
-    width: 70%;
+    width: 80%;
     height: 80%;
     background-color: #E2F7FF;
     border: 10px solid #0CABE6;
@@ -366,16 +339,9 @@ select:focus {
     height: 100%;
 }
 
-
-/*Footer*/
+/* ------------------------- footer ----------------------------*/
 
 footer {
     height: 10%;
-    background-color: black;
-    text-align: center;
-}
-
-footer p {
-    margin: 0;
-}
-
+    background-color: black;  
+} 
