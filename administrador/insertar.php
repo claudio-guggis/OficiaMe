@@ -31,14 +31,14 @@
     {
         echo "<script text='text/javascript'>
             alert('Registro añadido con éxito!');
-            window.location = 'mantenertb.php';
+            window.location = 'admin.php';
             </script>";
     }
     else
     {
         echo "<script text='text/javascript'>
             alert('Ups! No se han podido registrar los datos');
-            //window.location = 'mantenertb.php';
+            //window.location = 'admin.php';
             </script>";
     }
 ?>

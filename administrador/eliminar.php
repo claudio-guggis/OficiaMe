@@ -18,24 +18,27 @@
         }
         elseif($i == 3)
         {
-            $idACambiar = $value;
+            $idABorrar = $value;
         }
         //echo "\$_POST[$i] => $value.\n";
         $i++;
     }
 
-    $newId = $_POST['ident'];
-    $newName = $_POST['name'];
+    if(!is_numeric($idABorrar))
+    {
+        $idABorrar = "'".$idABorrar."'";
+    }
 
-    $sql = "UPDATE $nombreTabla SET $prefijoId = '$newId', $prefijoNombre = '$newName' WHERE $prefijoId = '$idACambiar'";
+    $sql = "DELETE FROM $nombreTabla WHERE $prefijoId = $idABorrar";
     // echo $sql;
+    // echo is_numeric($idABorrar);
     // exit();
     $query = mysqli_query($conexion, $sql);
 
     if($query)
     {
         echo "<script text='text/javascript'>
-            alert('Registro actualizado con éxito!');
+            alert('Registro eliminado con éxito!');
             window.location = 'admin.php';
             </script>";
     }

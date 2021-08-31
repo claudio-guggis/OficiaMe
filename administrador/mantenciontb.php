@@ -192,28 +192,136 @@
                         <?php
                     }
                 }
-            ?>
-            <div class="col-lg-3">
+                ?>
+                    <div class="col-lg-3">
+                        <?php
+                            if($inicio == 0)
+                            {
+                                ?>
+                                <a href="mantenciontb.php?nomtablas=<?php echo $nombreTabla ?>&op=<?php echo $operacion ?>&page=<?php echo $inicio+3 ?>">Siguiente</a>
+                                <?php
+                            }
+                            else
+                            {
+                                if($impreso == 3)
+                                {
+                                    ?>
+                                    <a href="mantenciontb.php?nomtablas=<?php echo $nombreTabla ?>&op=<?php echo $operacion ?>&page=<?php echo $inicio+3 ?>">Siguiente</a>
+                                    <?php
+                                }
+
+                            }
+                        ?>
+                    </div>
+                </div>
                 <?php
-                    if($inicio == 0)
+            }
+            else
+            {
+                $sql2 = "SELECT COUNT($prefijoId) as cantidad
+            FROM $nombreTabla";
+
+            $res = mysqli_query($conexion, $sql2);
+
+            if($registros = mysqli_fetch_array($res))
+            {
+                $cantidad = $registros["cantidad"];
+            }
+
+            if (isset($_GET["page"])) {
+                $inicio = $_GET["page"];
+            }
+            else
+            {
+                $inicio = 0;
+            }
+            $sql = "SELECT $prefijoId, $prefijoNombre FROM $nombreTabla LIMIT $inicio, 3";
+            //echo $consulta;
+            $query = mysqli_query($conexion, $sql);
+
+            $impreso=0;
+            while($valores = mysqli_fetch_array($query))
+            {
+                $impreso++;
+                ?>
+                <div class="contenedor-insertar">
+                    <form class="form" action="eliminar.php" method="post">
+                        <!-- <div class="contenedor-datos">
+                            <label ><?php echo $valores[0] ?></label>
+                            <input type="hidden" name="<?php echo $prefijoId ?>" value="<?php echo $prefijoId ?>">
+                            <label ><?php echo $valores[1] ?></label>
+                            <input type="hidden" name="<?php echo $prefijoNombre ?>" value="<?php echo $prefijoNombre ?>">
+                            <label ><?php echo $nombreTabla ?></label>
+                            <input type="hidden" name="<?php echo $nombreTabla ?>" value="<?php echo $nombreTabla ?>">
+                            <input type="hidden" name="<?php echo $valores[0] ?>" value="<?php echo $valores[0] ?>">
+                        </div> -->
+                        <p>
+                        <label ><?php echo $valores[0] ?></label>
+                            <input type="hidden" name="<?php echo $prefijoId ?>" value="<?php echo $prefijoId ?>">
+                            <label ><?php echo $valores[1] ?></label>
+                            <input type="hidden" name="<?php echo $prefijoNombre ?>" value="<?php echo $prefijoNombre ?>">
+                            <label ><?php echo $nombreTabla ?></label>
+                            <input type="hidden" name="<?php echo $nombreTabla ?>" value="<?php echo $nombreTabla ?>">
+                            <input type="hidden" name="<?php echo $valores[0] ?>" value="<?php echo $valores[0] ?>">
+                        </p>
+                        
+                        <div class="contenedor-boton">
+                            <button class="btn-delete">Eliminar</button>
+                        </div>
+                    </form>
+                </div>
+                <?php
+            }
+            ?>
+            <div class="row">
+            <?php
+                if($inicio == 0)
+                {
+                    ?>
+                    <div class="col-lg-3">Anterior</div>
+                    <?php
+                }
+                else
+                {
+                    if($inicio == 3)
                     {
                         ?>
-                        <a href="mantenciontb.php?nomtablas=<?php echo $nombreTabla ?>&op=<?php echo $operacion ?>&page=<?php echo $inicio+3 ?>">Siguiente</a>
+                        <div class="col-lg-3">
+                            <a href="mantenciontb.php?nomtablas=<?php echo $nombreTabla ?>&op=<?php echo $operacion ?>&nombre=">Anterior</a>
+                        </div>
                         <?php
                     }
                     else
                     {
-                        if($impreso == 3)
-                        {
-                            ?>
-                            <a href="mantenciontb.php?nomtablas=<?php echo $nombreTabla ?>&op=<?php echo $operacion ?>&page=<?php echo $inicio+3 ?>">Siguiente</a>
-                            <?php
-                        }
-
+                        ?>
+                        <div class="col-lg-3">
+                            <a href="mantenciontb.php?nomtablas=<?php echo $nombreTabla ?>&op=<?php echo $operacion ?>&page=<?php echo $inicio-3 ?>">Anterior</a>
+                        </div>
+                        <?php
                     }
+                }
                 ?>
-            </div>
-        </div>
+                    <div class="col-lg-3">
+                        <?php
+                            if($inicio == 0)
+                            {
+                                ?>
+                                <a href="mantenciontb.php?nomtablas=<?php echo $nombreTabla ?>&op=<?php echo $operacion ?>&page=<?php echo $inicio+3 ?>">Siguiente</a>
+                                <?php
+                            }
+                            else
+                            {
+                                if($impreso == 3)
+                                {
+                                    ?>
+                                    <a href="mantenciontb.php?nomtablas=<?php echo $nombreTabla ?>&op=<?php echo $operacion ?>&page=<?php echo $inicio+3 ?>">Siguiente</a>
+                                    <?php
+                                }
+
+                            }
+                        ?>
+                    </div>
+                </div>
                 <?php
             }
         ?>
