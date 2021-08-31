@@ -24,6 +24,16 @@
     //$sql = "INSERT INTO $nombreTabla ($prefijoId, $prefijoNombre) VALUES ()";
     //echo $sql;
 
+    function ponNombre($conexion)
+    {
+        $rut = $_SESSION['user'];
+        $sql = "SELECT usu_nombre FROM usuario WHERE usu_rut = '$rut'";
+        $query = mysqli_query($conexion, $sql);
+        $valor = mysqli_fetch_array($query);
+        $row = $valor[0];
+        echo $row;
+    }
+
     
 ?>
 
@@ -48,7 +58,7 @@
 
 
         <div class="contenedor-saludo">
-            <!-- <p>Hola <?php //echo ponNombre($conexion); ?> </p> -->
+            <p>Hola <?php echo ponNombre($conexion); ?> </p>
         </div>
 
         <div class="contenedor-opciones">

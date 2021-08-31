@@ -22,24 +22,36 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../assets/solicitudesmisservicios.css">
     <title>Solicitudes de mis servicios</title>
 </head>
 <body>
-    <header>
+    <header class="contenedor-flex-header">
+
+        <img src="../imagenes/logo redondo.png" class="flex-item-logo">
+
         <div class="contenedor-subsecciones">
-            <ul>
-                <img src="../imagenes/logo redondo.png" >
-                <li><a href="misservicios.php">Mis Servicios</a></li>
-                <li><a href="publicarservicio.php">Publicar Oferta</a></li>
-                <li><a href="solicitudesmisservicios.php">Solicitudes</a></li>
-            </ul>
+            <button class="btn-ms" type="button" onclick="location.href='misservicios.php'">Mis Servicios</button>
+            <button class="btn-po" type="button" onclick="location.href='publicarservicio.php'" >Publicar Oferta</button>
+            <button class="btn-sol" type="button" onclick="location.href='solicitudesmisservicios.php'">Solicitudes</button>
+
+        </div>
+
+        <div class="contenedor-saludo">
+            <p>Hola <?php echo ponNombre($conexion); ?> </p>
         </div>
 
         <div class="contenedor-opciones">
-            <ul>
-                <li>Hola Trabajador <?php echo ponNombre($conexion); ?></li>
-                <li><a href="">Opciones</a></li>
-            </ul>
+            <nav class="main_nav">
+                <button class="icon_menu" id ="btn_menu"><img  src="../iconos/btn_opciones.png"></button>
+                    
+                    <ul class="menu" id ="menu">
+                        <li class ="menu_item"><a href="" class="menu_link menu_link_select">Mis solicitudes</a></li>
+                        <li class ="menu_item"><a href="" class="menu_link">Preferencias</a></li>
+                        <li class ="menu_item"><a href="" class="menu_link">Ajustes</a></li>
+                        <li class ="menu_item"><a href="./../cerrarsesion.php" class="menu_link">Cerrar sesión</a></li>
+                    </ul>
+            </nav>
         </div>
         
     </header>
@@ -48,9 +60,12 @@
         include('mostrarsolmisservicios.php');
     ?>
 
-    <br>
-    <hr>
-    <p><a href="./../cerrarsesion.php">Cerrar sesión</a></p>
+    <footer>
+        <!-- <p><a href="./../cerrarsesion.php">Cerrar sesión</a></p> -->
+    </footer>
+
+    <script src="../assets/menu.js"></script>
+
 </body>
 </html>
 <?php
