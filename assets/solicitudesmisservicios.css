@@ -181,7 +181,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 75%;
+    height: 40%;
     background-color: #313131;
    
 }
@@ -221,7 +221,8 @@ body {
     text-align: center;
     top:10%;
     left:5%;
-    height: 37%;
+    /* height: 37%; */
+    height: 70%;
     width: 88%;
     background-color:#E2F7FF;
     border: solid 6px #0CABE6;
@@ -447,6 +448,34 @@ body {
     font-weight: bold;
     color: black;
       }
+
+/* BOTONES DE ANTERIOR Y SIGUIENTE */
+
+.row {
+    display: inline-block;
+    width: 100%;
+    background-color: #444444;
+    text-align: center;
+    height: 40px;
+} 
+
+.col-lg-3 {
+    display: inline-block;
+    width: 200px;
+    margin: 10px;
+    background-color: #0CABE6;
+    border-radius: 5px;
+}
+
+.col-lg-3 a {
+    color: white;
+    height: 100%;
+}
+
+.row div {
+    color: white;
+}
+
 footer {
         height: 10%;
         background-color: black;  

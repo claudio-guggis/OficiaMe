@@ -181,7 +181,7 @@
     <title>Busqueda</title>
 </head>
 <body>
-<header class="contenedor-flex-header">
+    <header class="contenedor-flex-header">
         <img src="../imagenes/logo redondo.png" class="flex-item-img">
 
         <div class="contenedor-busqueda-trabajadores">

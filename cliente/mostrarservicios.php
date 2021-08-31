@@ -6,6 +6,31 @@
 
     $rutCliente = $_SESSION['user'];
 
+    $sql2 = "SELECT COUNT(ser_id) as cantidad
+    FROM servicio, usuario, region, comuna
+    WHERE com_region = reg_id
+    AND usu_rut = ser_usu_rut
+    AND com_id = usu_comuna
+    AND  NOT EXISTS (SELECT sol_servicio, sol_usu_rut
+                     FROM solicitud
+                     WHERE ser_id = sol_servicio
+                     AND sol_usu_rut = '$rutCliente') ORDER BY ser_fechapub DESC";
+
+    $res = mysqli_query($conexion, $sql2);
+
+    if($registros = mysqli_fetch_array($res))
+    {
+        $cantidad = $registros["cantidad"];
+    }
+
+    if (isset($_GET["page"])) {
+        $inicio = $_GET["page"];
+    }
+    else
+    {
+        $inicio = 0;
+    }
+
     /**
      * MOSTRAR SERVICIOS QUE EL CLIENTE NO HAYA SOLICITADO ANTERIORMENTE
      */
@@ -18,7 +43,8 @@
     AND  NOT EXISTS (SELECT sol_servicio, sol_usu_rut
                      FROM solicitud
                      WHERE ser_id = sol_servicio
-                     AND sol_usu_rut = '$rutCliente') ORDER BY ser_fechapub DESC";
+                     AND sol_usu_rut = '$rutCliente') ORDER BY ser_fechapub DESC
+                     LIMIT $inicio, 3";
 
     //echo $sql;
 
@@ -26,8 +52,10 @@
 
     if($query)
     {
+        $impreso = 0;
         while($valores = mysqli_fetch_array($query))
         {
+            $impreso++;
             $idServicio = $valores['ser_id'];
             $tituloServicio = $valores['ser_titulo'];
             $nombreTrabajador = $valores['usu_nombre'];
@@ -47,24 +75,6 @@
             $descServicio = $valores['ser_descripcion'];
             $fechaPublicacion = $valores['ser_fechapub'];
             ?>
-                <!-- <div class="info-sol">
-                    <p>
-                        <b>Titulo Servicio: </b>  <br>
-                        <b>Nombre Trabajador: </b>  <br>
-                        <b>Apellido: </b>  <br>
-                        <b>Region: </b>  <br>
-                        <b>Comuna: </b>  <br>
-                        <b>Valor: </b>  <br>
-                        <b>Descripcion: </b>  <br>
-                        <b>Fecha: </b>  <br>
-
-                        <form action="solicitar.php" method="post">
-                            <input type="hidden" name="" value="">
-                            <button class="btn-solicitame" name="request">SolicitaMe</button>
-                        </form>
-                    </p>
-                </div> -->
-
                 <div class="contenedor-principal-servicios">
 
                     <div class="contenedor-tarjeta">
@@ -124,5 +134,54 @@
                 </div>
             <?php
         }
-    }
+    }  
 ?>
+<div class="row">
+        <?php
+            if($inicio == 0)
+            {
+                ?>
+                <div class="col-lg-3">Anterior</div>
+                <?php
+            }
+            else
+            {
+                if($inicio == 3)
+                {
+                    ?>
+                    <div class="col-lg-3">
+                        <a href="cliente.php">Anterior</a>
+                    </div>
+                    <?php
+                }
+                else
+                {
+                    ?>
+                    <div class="col-lg-3">
+                        <a href="cliente.php?page=<?php echo $inicio-3 ?>">Anterior</a>
+                    </div>
+                    <?php
+                }
+            }
+        ?>
+        <div class="col-lg-3">
+            <?php
+                if($inicio == 0)
+                {
+                    ?>
+                    <a href="cliente.php?page=<?php echo $inicio+3 ?>">Siguiente</a>
+                    <?php
+                }
+                else
+                {
+                    if($impreso == 3)
+                    {
+                        ?>
+                        <a href="cliente.php?page=<?php echo $inicio+3 ?>">Siguiente</a>
+                        <?php
+                    }
+
+                }
+            ?>
+        </div>
+    </div>

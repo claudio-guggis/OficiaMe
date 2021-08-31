@@ -267,6 +267,33 @@ input:focus {
     font-weight: bold;
 }
 
+/* BOTONES DE ANTERIOR Y SIGUIENTE */
+
+.row {
+    display: inline-block;
+    width: 100%;
+    background-color: #444444;
+    text-align: center;
+    height: 40px;
+} 
+
+.col-lg-3 {
+    display: inline-block;
+    width: 200px;
+    margin: 10px;
+    background-color: #0CABE6;
+    border-radius: 5px;
+}
+
+.col-lg-3 a {
+    color: white;
+    height: 100%;
+}
+
+.row div {
+    color: white;
+}
+
 /* ------------------------- footer ----------------------------*/
 
 footer {

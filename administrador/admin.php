@@ -56,7 +56,7 @@
     </header>
 
     <div class="contenedor-principal-mantenciontb">
-        <form class="form" action="mantenciontb.php" method="post">
+        <form class="form" action="mantenciontb.php" method="GET">
                 <div class="contenedor-label-mantencion">
                     <label class="label-mentencion">Mantención de tablas</label>
                 </div>
@@ -106,7 +106,7 @@
     </div>
     
     <footer>
-        <p><a href="./../cerrarsesion.php">Cerrar sesión</a></p>
+        <!-- <p><a href="./../cerrarsesion.php">Cerrar sesión</a></p> -->
     </footer>
     <script src="../assets/menu.js"></script>
     

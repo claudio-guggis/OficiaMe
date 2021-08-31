@@ -7,13 +7,37 @@
      */
     $rut = $_SESSION['user'];
 
-    $sql = "SELECT ser_id, ser_titulo, usu_nombre, usu_paterno, reg_nombre, com_nombre, ser_valor, ser_descripcion, ser_fechapub FROM servicio, usuario, region, comuna WHERE com_region = reg_id AND usu_rut = ser_usu_rut AND com_id = usu_comuna AND usu_rut = $rut ORDER BY ser_fechapub DESC";
+    $sql2 = "SELECT COUNT(ser_id) as cantidad
+    FROM servicio, usuario, region, comuna
+    WHERE com_region = reg_id
+    AND usu_rut = ser_usu_rut
+    AND com_id = usu_comuna
+    AND  usu_rut = '$rut'";
+
+    $res = mysqli_query($conexion, $sql2);
+
+    if($registros = mysqli_fetch_array($res))
+    {
+        $cantidad = $registros["cantidad"];
+    }
+
+    if (isset($_GET["page"])) {
+        $inicio = $_GET["page"];
+    }
+    else
+    {
+        $inicio = 0;
+    }
+
+    $sql = "SELECT ser_id, ser_titulo, usu_nombre, usu_paterno, reg_nombre, com_nombre, ser_valor, ser_descripcion, ser_fechapub FROM servicio, usuario, region, comuna WHERE com_region = reg_id AND usu_rut = ser_usu_rut AND com_id = usu_comuna AND usu_rut = $rut ORDER BY ser_fechapub DESC LIMIT $inicio, 3";
     $query = mysqli_query($conexion, $sql);
 
     if($query)
     {
+        $impreso = 0;
         while($valores = mysqli_fetch_array($query))
         {
+            $impreso++;
             $idServicio = $valores['ser_id'];
             $tituloServicio = $valores['ser_titulo'];
             $nombreTrabajador = $valores['usu_nombre'];
@@ -92,3 +116,52 @@
         }
     }
 ?>
+<div class="row">
+        <?php
+            if($inicio == 0)
+            {
+                ?>
+                <div class="col-lg-3">Anterior</div>
+                <?php
+            }
+            else
+            {
+                if($inicio == 3)
+                {
+                    ?>
+                    <div class="col-lg-3">
+                        <a href="misservicios.php">Anterior</a>
+                    </div>
+                    <?php
+                }
+                else
+                {
+                    ?>
+                    <div class="col-lg-3">
+                        <a href="misservicios.php?page=<?php echo $inicio-3 ?>">Anterior</a>
+                    </div>
+                    <?php
+                }
+            }
+        ?>
+        <div class="col-lg-3">
+            <?php
+                if($inicio == 0)
+                {
+                    ?>
+                    <a href="misservicios.php?page=<?php echo $inicio+3 ?>">Siguiente</a>
+                    <?php
+                }
+                else
+                {
+                    if($impreso == 3)
+                    {
+                        ?>
+                        <a href="misservicios.php?page=<?php echo $inicio+3 ?>">Siguiente</a>
+                        <?php
+                    }
+
+                }
+            ?>
+        </div>
+    </div>
