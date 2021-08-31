@@ -62,7 +62,17 @@
         </div>
 
         <div class="contenedor-opciones">
-            <button type="button"><img src="../iconos/btn_opciones.png"></button>
+            <nav class="main_nav">
+            
+                <button class="icon_menu" id ="btn_menu"><img  src="../iconos/btn_opciones.png"></button>
+                
+                <ul class="menu" id ="menu">
+                    <li class ="menu_item"><a href="" class="menu_link menu_link_select">Tablas básicas</a></li>
+                    <li class ="menu_item"><a href="" class="menu_link">Preferencias</a></li>
+                    <li class ="menu_item"><a href="" class="menu_link">Ajustes</a></li>
+                    <li class ="menu_item"><a href="./../cerrarsesion.php" class="menu_link">Cerrar sesión</a></li>
+                </ul>
+            </nav>
         </div>
 
         
@@ -137,8 +147,10 @@
     </script>
 
     <footer>
-        <p><a href="../cerrarsesion.php">Cerrar sesión</a></p>
+        
     </footer>
+
+    <script src="../assets/menu.js"></script>
 
 </body>
 </html>
