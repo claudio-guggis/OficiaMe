@@ -33,47 +33,54 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../assets/nuevoregistro.css">
     <title>Administrador</title>
 </head>
 <body>
-    <header>
+    <header class="contenedor-flex-header">
+        <img class="flex-item-logo" src="../imagenes/logo redondo.png" >
+
         <div class="contenedor-subsecciones">
-            <ul>
-                <img src="../imagenes/logo redondo.png" >
-                <li><a href="mantenertb.php">Mantener tablas básicas</a></li>
-                <li><a href="">Mantener cuentas de usuario</a></li>
-                <li><a href="">Reportes</a></li>
-            </ul>
+            <button class="btn-mtablasbasicas">Mantener tablas básicas</button>
+            <button class="btn-mcuentasusuario">Mantener cuentas de usuario</button>
+            <button class="btn-reportes">Reportes</button>
+        </div>
+
+
+        <div class="contenedor-saludo">
+            <!-- <p>Hola <?php //echo ponNombre($conexion); ?> </p> -->
         </div>
 
         <div class="contenedor-opciones">
-            <ul>
-                <li>Administrador <?php echo $_SESSION['user']; ?></li>
-                <li><a href="">Opciones</a></li>
-            </ul>
+            <button type="button"><img src="../iconos/btn_opciones.png"></button>
         </div>
+
         
     </header>
-    <h1>Mantenedor de tablas básicas</h1>
 
     <?php
         if($operacion == 'I')
         {
             ?>
-            <form action="insertar.php" method="post">
-                <input type="hidden" name="<?php echo $prefijoId ?>" value="<?php echo $prefijoId ?>">
-                <input type="hidden" name="<?php echo $prefijoNombre ?>" value="<?php echo $prefijoNombre ?>">
-                <input type="hidden" name="<?php echo $nombreTabla ?>" value="<?php echo $nombreTabla ?>">
-                <div class="contenedor-id">
-                    <input type="text" name="ident" placeholder="Identificador">
-                </div>
-                <div class="contenedor-nombre">
-                    <input type="text" name="name" placeholder="Nombre">
-                </div>
-                <div class="contenedor-boton">
-                    <button class="btn-insert">Insertar</button>
-                </div>
-            </form>
+            <div class="contenedor-insertar">
+                <form class="form" action="insertar.php" method="post">
+                    <input type="hidden" name="<?php echo $prefijoId ?>" value="<?php echo $prefijoId ?>">
+                    <input type="hidden" name="<?php echo $prefijoNombre ?>" value="<?php echo $prefijoNombre ?>">
+                    <input type="hidden" name="<?php echo $nombreTabla ?>" value="<?php echo $nombreTabla ?>">
+
+                    <p>Nuevo registro</p>
+                    <div class="contenedor-id">
+                        <input type="text" name="ident" placeholder="Identificador">
+                    </div>
+                    <div class="contenedor-nombre">
+                        <input type="text" name="name" placeholder="Nombre">
+                    </div>
+                    <div class="contenedor-boton">
+                        <button class="btn-insert">Insertar</button>
+                    </div>
+                </form>
+            </div>
+            
             <?php
         }
         elseif ($operacion == 'U') {
@@ -84,7 +91,7 @@
             while($valores = mysqli_fetch_array($query))
             {
                 ?>
-                <form action="actualizar.php" method="post">
+                <form class="form" action="actualizar.php" method="post">
                     <div class="contenedor-datos">
                         <label ><?php echo $valores[0] ?></label>
                         <input type="hidden" name="<?php echo $prefijoId ?>" value="<?php echo $prefijoId ?>">
@@ -119,10 +126,9 @@
         }
     </script>
 
-    
+    <footer>
+        <p><a href="../cerrarsesion.php">Cerrar sesión</a></p>
+    </footer>
 
-    <br>
-    <hr>
-    <p><a href="cerrarsesion.php">Cerrar sesión</a></p>
 </body>
 </html>

@@ -1,4 +1,11 @@
 <?php
+    use PHPMailer\PHPMailer\PHPMailer;
+    use PHPMailer\PHPMailer\Exception;
+    
+    require ('./../PHPMailer/Exception.php');
+    require ('./../PHPMailer/PHPMailer.php');
+    require ('./../PHPMailer/SMTP.php');
+
     session_start();
 
     //require_once('mostrarservicios.php');
@@ -27,6 +34,13 @@
         $rut = $_SESSION['user'];
         $tipo = $_SESSION['type'];
 
+        $sqlrutTrab = "SELECT ser_usu_rut FROM servicio WHERE ser_id = $solServicio";
+        //echo $sqlrutTrab."\n";
+
+        $resu = mysqli_query($conexion, $sqlrutTrab);
+        $fila = mysqli_fetch_array($resu);
+        $rutTrab = $fila[0];
+
         $sql = "INSERT INTO solicitud (sol_fecha_ing, sol_fecha_res, sol_estado, sol_servicio, sol_usu_rut, sol_usu_tipo) VALUES ('$fechaIngreso', null, '$estadoSolicitud', $solServicio, '$rut', '$tipo')";
         //echo $sql;
 
@@ -34,6 +48,58 @@
 
         if($query)
         {
+            /** Datos para el correo */
+
+            //Consultamos para obtener el correo del trabajador
+            $sqlCorreo = "SELECT usu_correo FROM usuario WHERE usu_rut = '$rutTrab'";
+            //echo $sqlCorreo."\n";
+        
+            $res = mysqli_query($conexion, $sqlCorreo);
+            $row = mysqli_fetch_array($res);
+            $correo = $row[0];
+            //echo $correo;
+            //exit();
+            
+            $cuerpoCorreo = "Revisa tu bandeja de solicitudes para que respondas pronto a esta solicitud";
+            //Create an instance; passing `true` enables exceptions
+
+            $mail = new PHPMailer(true);
+
+            try {
+                //Server settings
+                $mail->SMTPDebug = 0;                      //Enable verbose debug output
+                $mail->isSMTP();                                            //Send using SMTP
+                $mail->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
+                $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
+                $mail->Username   = 'sistema.oficiame@gmail.com';                     //SMTP username
+                $mail->Password   = 'Oficiame123';                               //SMTP password
+                $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
+                $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+
+                //Recipients
+                $mail->setFrom('sistema.oficiame@gmail.com', 'OficiaMe Mail System');
+                $mail->addAddress("$correo", 'Recibe');     //Add a recipient
+                // $mail->addAddress('ellen@example.com');               //Name is optional
+                // $mail->addReplyTo('info@example.com', 'Information');
+                // $mail->addCC('cc@example.com');
+                // $mail->addBCC('bcc@example.com');
+
+                //Attachments
+                // $mail->addAttachment('/var/tmp/file.tar.gz');         //Add attachments
+                // $mail->addAttachment('/tmp/image.jpg', 'new.jpg');    //Optional name
+
+                //Content
+                $mail->isHTML(true);                                  //Set email format to HTML
+                $mail->Subject = 'Alguien quiere solicitar tu servicio!';
+                $mail->Body    = "$cuerpoCorreo";
+                // $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
+
+                $mail->send();
+                //echo 'El mensaje se envió correctamente';
+            } catch (Exception $e) {
+                echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+            }
+
             echo "<script text='text/javascript'>
                 alert('Solicitud realizada con exito!');
                 window.location = 'cliente.php';

@@ -109,6 +109,8 @@
                                     <form action="solicitar.php" method="post">
                                         <input type="hidden" name="<?php echo $idServicio; ?>" value="<?php echo $idServicio; ?>">
                                             <button class="btn-solicitame" name="request"><b>SolicitaMe</b></button>
+                                            <!-- <input class="btn-solicitame" type="submit" value="SolicitaMe" name="request"> -->
+                                            <!-- cambiar por submit para correo!!! -->
                                             <!-- <button type="button" class="btn-solicitame" name="request"><b>SolicitaMe</b></button> -->
                                     </form>
                                     
