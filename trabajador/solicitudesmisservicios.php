@@ -47,7 +47,7 @@
                     
                     <ul class="menu" id ="menu">
                         <li class ="menu_item"><a href="" class="menu_link menu_link_select">Mis solicitudes</a></li>
-                        <li class ="menu_item"><a href="" class="menu_link">Preferencias</a></li>
+                        <li class ="menu_item"><a href="./../formulariocontacto.php" class="menu_link">Contacto</a></li>
                         <li class ="menu_item"><a href="" class="menu_link">Ajustes</a></li>
                         <li class ="menu_item"><a href="./../cerrarsesion.php" class="menu_link">Cerrar sesión</a></li>
                     </ul>
@@ -135,6 +135,7 @@
                         </div>
                         
                         <form action="responder.php" method="post">
+                            <input type="hidden" name="<?php echo $idSolicitud; ?>" value="<?php echo $idSolicitud; ?>">
                             <button class="btn-a1" name="response-accepted">Aceptar</button>
                             <button class="btn-r1" name="response-rejected">Rechazar</button>
                         </form>

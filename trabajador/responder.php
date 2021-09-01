@@ -38,7 +38,7 @@
         //exit();
 
         //Extraemos su correo
-        $sqlCorreo = "SELECT usu_correo FROM usuario WHERE usu_rut = '19892760'";
+        $sqlCorreo = "SELECT usu_correo FROM usuario WHERE usu_rut = '$rutCli'";
         $res = mysqli_query($conexion, $sqlCorreo);
         $row = mysqli_fetch_array($res);
         $correoCli = $row[0];
@@ -71,11 +71,11 @@
             // echo "$telefonoTrab\n";
             // exit();
 
-            $cuerpoCorreo = "Tu solicitud para el servicio '$nombreServicio' ha sido aceptada! Los datos de tu trabajador son:\n";
-            $cuerpoCorreo .= "Nombre: $nombreTrab".'\n';
-            $cuerpoCorreo .= "Apellido: $apellidoPaternoTrab\n";
-            $cuerpoCorreo .= "Correo: $correoTrab\n";
-            $cuerpoCorreo .= "Telefono: $telefonoTrab\n";
+            $cuerpoCorreo = "Tu solicitud para el servicio '$nombreServicio' ha sido aceptada! Los datos de tu trabajador son:<br><br>\n\n ";
+            $cuerpoCorreo .= 'Nombre: '.$nombreTrab."<br>\n\n ";
+            $cuerpoCorreo .= 'Apellido: '.$apellidoPaternoTrab."<br>\n\n ";
+            $cuerpoCorreo .= 'Correo: '.$correoTrab."<br>\n\n" ;
+            $cuerpoCorreo .= 'Telefono: '.$telefonoTrab."<br>\n\n ";
 
             $mail = new PHPMailer(true);
 

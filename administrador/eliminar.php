@@ -45,7 +45,7 @@
     else
     {
         echo "<script text='text/javascript'>
-            alert('Ups! No se han podido actualizar los datos');
+            alert('Ups! No se ha podido eliminar el registro');
             //window.location = 'admin.php';
             </script>";
     }

@@ -46,6 +46,10 @@
 			<div class="contenedor-flexible-inferior">
 				<a href="signup.php"><button class="boton-registrate">Regístrate</button></a>
 			</div>
+
+			<div class="contenedor-contacto">
+				<a href="formulariocontacto.php"><button class="btn-contacto">Contacto</button></a>
+			</div>
 		</div>
 	</div>
 
