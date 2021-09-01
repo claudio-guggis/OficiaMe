@@ -118,3 +118,16 @@ body {
 	border: 5px solid #0CABE6;
 	color: #0CABE6;
 }
+
+.btn-contacto {
+	border-radius: 5px;
+	background: #222;
+	border: 5px solid #666;
+	color: white;
+	padding: 10px;
+}
+
+.btn-contacto:hover {
+	border: 5px solid #0CABE6;
+	color: #0CABE6;
+}
