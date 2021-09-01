@@ -1,0 +1,206 @@
+* {
+	box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+    background: linear-gradient(45deg, #111, #0CABE6 40%, #111);
+    margin: 0;
+}
+
+/* contenedores principal, izquierdo y derecho */
+
+.contenedor-principal {
+    position: relative;
+    width: 80%;
+    height: 80%;
+    background-color: #b4e0fd;
+    border-radius: 10px;
+    border: 15px solid #0CABE6;  
+}
+
+.contenedor-izquierdo {
+    display: inline-block;
+    position: relative;
+    width: 30%;
+    height: 100%;
+    background-color: #333;
+}
+
+.contenedor-logo {
+    position: absolute;
+    left: calc(50% - 150px);
+    top: calc(50% - 150px);
+    width: 300px;
+    height: 300px;
+}
+
+.contenedor-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+
+
+.contenedor-derecho {
+    position: absolute;
+    left: 30%;
+    display: inline-block;
+    width: 70%;
+    height: 100%;
+}
+
+/* --------------------------------------- */
+
+
+
+.contenedor-formulario {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.contenedor-formulario form {
+    position: absolute;
+    padding: 20px;
+    width: 600px;
+    height: 500px;
+    /* border: 4px solid orange; */
+    left: calc(50% - 300px);
+    top: calc(50% - 280px);
+    text-align: center;
+}
+
+.form div {
+    margin: 15px;
+    /* border: 2px solid red; */
+}
+
+.label-formulario {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.contenedor-nombres {
+    height: 30px;
+}
+
+.contenedor-correo {
+    height: 30px;
+}
+
+.contenedor-telefono {
+    height: 30px;
+}
+
+.contenedor-btn-enviar {
+    height: 30px;
+}
+
+.contenedor-nombres input {
+    border: 4px solid #0CABE6;
+    border-radius: 4px;
+    padding: 10px;
+    text-align: center;
+    width: 60%;
+    height: 100%;
+}
+
+.input-nombres:focus {
+    outline: none;
+}
+
+.contenedor-correo input{
+    border: 4px solid #0CABE6;
+    border-radius: 4px;
+    padding: 10px;
+    text-align: center;
+    width: 60%;
+    height: 100%;
+}
+
+.input-correo:focus {
+    outline: none;
+}
+
+.contenedor-telefono input{
+    border: 4px solid #0CABE6;
+    border-radius: 4px;
+    padding: 10px;
+    text-align: center;
+    width: 60%;
+    height: 100%;
+}
+
+.input-telefono:focus {
+    outline: none;
+}
+
+.contenedor-areatexto textarea{
+    border: 4px solid #0CABE6;
+    border-radius: 4px;
+    padding: 10px;
+    width: 100%;
+    height: 100%;
+}
+
+.tacomentario:focus{
+    outline: none;
+}
+
+.contenedor-btn-enviar button {
+    /* border: 4px solid #0CABE6; */
+    background-color: #0CABE6;
+    font-weight: bold;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    text-align: center;
+    width: 60%;
+    height: 100%;
+}
+
+
+
+.btn-enviar:hover {
+    cursor: pointer;
+}
+
+
+
+.contenedor-volver {
+    position: absolute;
+    width: 150px;
+    height: 30px;
+    left: calc(50% - 75px);
+    text-align: center;
+    bottom: 30px;
+    /* border: 4px solid yellow; */
+}
+
+.contenedor-volver button{
+    background-color: #0CABE6;
+    font-weight: bold;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    text-align: center;
+
+    width: 100%;
+    height: 100%;
+}
+
+.btn-volver:hover {
+    cursor: pointer;
+}
+
