@@ -30,7 +30,7 @@
     function llenarSexo($conexion)
     {
         //$output = '';
-        $sql = "SELECT sex_id, sex_nom FROM sexo";
+        $sql = "SELECT sex_id, sex_nombre FROM sexo";
         $query = mysqli_query($conexion, $sql);
         while($valores = mysqli_fetch_array($query))
         {
