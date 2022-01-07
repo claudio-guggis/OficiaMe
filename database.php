@@ -8,7 +8,7 @@
 
     $link = new mysqli($server, $username, $password, $database, $port);
 
-    //$conexion = mysqli_connect($server, $username, $password, $database);
-    //mysqli_set_charset($conexion, "utf8");
-    mysqli_set_charset($link, "utf8");
+    $conexion = mysqli_connect($server, $username, $password, $database);
+    mysqli_set_charset($conexion, "utf8");
+    //mysqli_set_charset($link, "utf8");
 ?>
