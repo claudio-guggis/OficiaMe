@@ -5,7 +5,7 @@
     // $database = $_SERVER['prueba_ofme'];
     // $port = $_SERVER['3306'];
 
-    $server = 'database-ofme-prueba2.c6pqllnanjg0.sa-east-1.rds.amazonaws.com';
+    $server = 'aa19t7qwob9kich.c6pqllnanjg0.sa-east-1.rds.amazonaws.com';
     $username = 'admin';
     $password = 'prueba1234';
     $database = 'prueba_ofme';
