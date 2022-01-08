@@ -18,18 +18,21 @@
     $cuerpoCorreo .= 'Telefono: '.$telefono."<br>\n\n ";
     $cuerpoCorreo .= 'Comentario: '.$comentario."<br>\n\n ";
 
+    $host = 'email-smtp.sa-east-1.amazonaws.com';
+    $port = 587;
+
     $mail = new PHPMailer(true);
 
     try {
         //Server settings
         $mail->SMTPDebug = 0;                      //Enable verbose debug output
         $mail->isSMTP();                                            //Send using SMTP
-        $mail->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
+        $mail->Host       = $host;                     //Set the SMTP server to send through
         $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
         $mail->Username   = 'sistema.oficiame@gmail.com';                     //SMTP username
         $mail->Password   = 'Oficiame123';                               //SMTP password
-        $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
-        $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+        $mail->SMTPSecure = 'tls';            //Enable implicit TLS encryption
+        $mail->Port       = $port;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
         //Recipients
         $mail->setFrom("$correo", 'Usuario');
