@@ -18,7 +18,8 @@
     $cuerpoCorreo .= 'Telefono: '.$telefono."<br>\n\n ";
     $cuerpoCorreo .= 'Comentario: '.$comentario."<br>\n\n ";
 
-    $host = 'email-smtp.sa-east-1.amazonaws.com';
+    $host = 'smtp.gmail.com';
+    // $host = 'email-smtp.sa-east-1.amazonaws.com';
     $port = 465;
 
     $mail = new PHPMailer(true);
