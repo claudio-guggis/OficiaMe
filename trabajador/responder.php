@@ -2,9 +2,9 @@
     use PHPMailer\PHPMailer\PHPMailer;
     use PHPMailer\PHPMailer\Exception;
     
-    require ('./../PHPMailer/Exception.php');
-    require ('./../PHPMailer/PHPMailer.php');
-    require ('./../PHPMailer/SMTP.php');
+    require_once (__DIR__.'./../PHPMailer/Exception.php');
+    require_once (__DIR__.'./../PHPMailer/PHPMailer.php');
+    require_once (__DIR__.'./../PHPMailer/SMTP.php');
 
     session_start();
 
