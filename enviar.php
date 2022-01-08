@@ -19,7 +19,7 @@
     $cuerpoCorreo .= 'Comentario: '.$comentario."<br>\n\n ";
 
     $host = 'email-smtp.sa-east-1.amazonaws.com';
-    $port = 587;
+    $port = 465;
 
     $mail = new PHPMailer(true);
 
