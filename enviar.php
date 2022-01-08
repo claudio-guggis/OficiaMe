@@ -32,7 +32,8 @@
         $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
         $mail->Username   = 'sistema.oficiame@gmail.com';                     //SMTP username
         $mail->Password   = 'Oficiame123';                               //SMTP password
-        $mail->SMTPSecure = 'tls';            //Enable implicit TLS encryption
+        //$mail->SMTPSecure = 'tls';            //Enable implicit TLS encryption
+        $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS; 
         $mail->Port       = $port;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
         //Recipients
