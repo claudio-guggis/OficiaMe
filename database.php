@@ -15,5 +15,6 @@
 
     $conexion = mysqli_connect($server, $username, $password, $database, $port);
     mysqli_set_charset($conexion, "utf8");
+    //comentario
     //mysqli_set_charset($link, "utf8"); 
 ?>
