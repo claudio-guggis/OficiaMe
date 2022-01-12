@@ -18,22 +18,25 @@
     $cuerpoCorreo .= 'Telefono: '.$telefono."<br>\n\n ";
     $cuerpoCorreo .= 'Comentario: '.$comentario."<br>\n\n ";
 
-    $host = 'smtp.gmail.com';
-    // $host = 'email-smtp.sa-east-1.amazonaws.com';
-    $port = 465;
+    //$host = 'smtp.gmail.com';
+    $sender = 'sistema.oficiame@gmail.com';
+    $host = 'email-smtp.sa-east-1.amazonaws.com';
+    $port = 587;
+    $usernameSMTP = 'AKIAVQJY5LW27J4LNDLJ';
+    $passwordSMTP = 'BF5SuGCwUdEndki5E4WN6S1MhKQpwo4URoQ92aqPdgoI';
 
     $mail = new PHPMailer(true);
 
     try {
         //Server settings
         $mail->SMTPDebug = 0;                      //Enable verbose debug output
-        //$mail->isSMTP();                                            //Send using SMTP
+        $mail->isSMTP();                                            //Send using SMTP
         $mail->Host       = $host;                     //Set the SMTP server to send through
         $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-        $mail->Username   = 'sistema.oficiame@gmail.com';                     //SMTP username
-        $mail->Password   = 'Oficiame123';                               //SMTP password
-        //$mail->SMTPSecure = 'tls';            //Enable implicit TLS encryption
-        $mail->SMTPSecure = 'ssl'; 
+        $mail->Username   = $usernameSMTP;                     //SMTP username
+        $mail->Password   = $passwordSMTP;                               //SMTP password
+        $mail->SMTPSecure = 'tls';            //Enable implicit TLS encryption
+        //$mail->SMTPSecure = 'ssl'; 
         $mail->Port       = $port;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
         //Recipients
