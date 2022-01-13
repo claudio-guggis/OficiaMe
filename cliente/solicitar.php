@@ -49,6 +49,7 @@
         if($query)
         {
             /** Datos para el correo del usuario */
+            //comentario
 
             //Consultamos para obtener el correo del trabajador
             $sqlCorreo = "SELECT usu_correo FROM usuario WHERE usu_rut = '$rutTrab'";
