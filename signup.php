@@ -120,11 +120,11 @@
                     </div>
 
                     <div class="form-section">
-                        <input type="text" class="form-input" name="nombre" placeholder="Dirección particular"> 
+                        <input type="text" class="form-input" name="direccion" placeholder="Dirección particular"> 
                     </div>
 
                     <div class="form-section">
-                        <input type="date" class="form-input" name="nombre" placeholder="Fecha de nacimiento"> 
+                        <input type="date" class="form-input" name="fecha" placeholder="Fecha de nacimiento"> 
                     </div>
 
 

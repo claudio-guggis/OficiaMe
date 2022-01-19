@@ -5,16 +5,16 @@
 
     if(isset($_POST['register']))
     {
-        if(strlen($_POST["type"])>=1 && strlen($_POST["user"])>=1 && strlen($_POST["pass"])>=1 && strlen($_POST["nombre"])>=1 && strlen($_POST["paterno"])>=1 && strlen($_POST["materno"])>=1 && strlen($_POST["mail"])>=1 && strlen($_POST["num"]) >=1 && strlen($_POST["direccion"])>=1 && strlen($_POST["fecha"])>=1 && strlen($_POST["sex"])>=1 && strlen($_POST["com"])>=1)
+        if(strlen($_POST["type"])>=1 && strlen($_POST["rut"])>=1 && strlen($_POST["pass"])>=1 && strlen($_POST["nombre"])>=1 && strlen($_POST["apaterno"])>=1 && strlen($_POST["amaterno"])>=1 && strlen($_POST["celectronico"])>=1 && strlen($_POST["ncelular"]) >=1 && strlen($_POST["direccion"])>=1 && strlen($_POST["fecha"])>=1 && strlen($_POST["sex"])>=1 && strlen($_POST["com"])>=1)
         {
-            $rut = $_POST["user"];
+            $rut = $_POST["rut"];
             $tipo = $_POST["type"];
             $clave = $_POST["pass"];
             $nombre = $_POST["nombre"];
-            $apPaterno = $_POST["paterno"];
-            $apMaterno = $_POST["materno"];
-            $correo = $_POST["mail"];
-            $numCelular = $_POST["num"];
+            $apPaterno = $_POST["apaterno"];
+            $apMaterno = $_POST["amaterno"];
+            $correo = $_POST["celectronico"];
+            $numCelular = $_POST["ncelular"];
             $direccion = $_POST["direccion"];
             $fechanac = $_POST["fecha"];
             $date = date("Y-m-d", strtotime($fechanac));
